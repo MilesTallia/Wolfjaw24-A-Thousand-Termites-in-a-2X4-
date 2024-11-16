@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3w1cvimx5888"]
+
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human.tscn" id="1_igiy5"]
+
+[node name="HumanTest" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Human" parent="." instance=ExtResource("1_igiy5")]
+position = Vector2(0, -3)
