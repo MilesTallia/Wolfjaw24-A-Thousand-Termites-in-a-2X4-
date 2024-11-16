@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnaeni1w5ketb"]
+
+[sub_resource type="GDScript" id="GDScript_a2174"]
+resource_name = "interactTest.gd"
+script/source = "extends Area2D
+
+@onready var ghost_timer_timer: Timer = $ghost_timer_timer
+@onready var ghost_timer: TextureProgressBar = $ghost_timer
+
+
+func _on_body_entered(body: Node2D) -> void:
+	ghost_timer.show()
+	ghost_timer_timer.start()
+	
+
+func _on_ghost_timer_timer_timeout() -> void:
+	$ghost_timer.value += 1
+	if $ghost_timer.value >= 30:
+		ghost_timer.hide()
+
+
+func _on_body_exited(body: Node2D) -> void:
+	$ghost_timer.value = 0
+	ghost_timer.hide()
+	
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nc8ga"]
+
+[node name="interactTest" type="Area2D"]
+collision_mask = 8
+script = SubResource("GDScript_a2174")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nc8ga")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
