@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxah5iwyjrka4"]
+
+[ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_2gq0c"]
+[ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="1_pe3ls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnuac"]
+atlas = ExtResource("1_pe3ls")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16qt7"]
+atlas = ExtResource("1_pe3ls")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k6s1"]
+atlas = ExtResource("1_pe3ls")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtd7d"]
+atlas = ExtResource("1_pe3ls")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5px3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16qt7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k6s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtd7d")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6o1f3"]
+radius = 3.0
+height = 16.0
+
+[node name="Human" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_2gq0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_5px3d")
+animation = &"walking"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_6o1f3")
