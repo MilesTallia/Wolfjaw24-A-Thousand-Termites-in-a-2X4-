@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhpkcertyp0d3"]
 
 [ext_resource type="Script" path="res://scripts/lever.gd" id="1_oc5ju"]
-[ext_resource type="PackedScene" uid="uid://na4d55dmxxi" path="res://scenes/human_interact.tscn" id="2_tk3ah"]
+[ext_resource type="PackedScene" uid="uid://na4d55dmxxi" path="res://scenes/human scenes/human_interact.tscn" id="2_tk3ah"]
 [ext_resource type="Texture2D" uid="uid://cudeujhe1wpbj" path="res://art/Floor_Lever.png" id="3_b03pn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5e5xd"]

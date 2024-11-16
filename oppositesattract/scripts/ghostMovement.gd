@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed = 150
 
+
+
 func get_input():
 	var input_direction = Input.get_vector("ghost left", "ghost right", "ghost up", "ghost down")
 	velocity = input_direction * speed
@@ -21,3 +23,7 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.flip_h = true;
 		
 		
+
+
+func _on_ready() -> void:
+	add_to_group("players")
