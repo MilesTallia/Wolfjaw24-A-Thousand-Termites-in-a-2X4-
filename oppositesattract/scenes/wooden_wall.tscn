@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3vuyh8ojuk4p"]
+
+[ext_resource type="Texture2D" uid="uid://decnkpb4gtgka" path="res://art/Thin_Wooden_Wall.png" id="1_u0nb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hlhf"]
+size = Vector2(16, 8)
+
+[node name="WoodenWall" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_u0nb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_6hlhf")

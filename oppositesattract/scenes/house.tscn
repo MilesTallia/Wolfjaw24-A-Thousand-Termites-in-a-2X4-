@@ -1,0 +1,128 @@
+[gd_scene load_steps=33 format=4 uid="uid://nsql6caoujco"]
+
+[ext_resource type="Script" path="res://scripts/ghostMovement.gd" id="1_qlhed"]
+[ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_h4phb"]
+[ext_resource type="Texture2D" uid="uid://dy7xf3x3e0xcb" path="res://art/Candles.png" id="3_1y1b3"]
+[ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="4_oenwh"]
+[ext_resource type="Texture2D" uid="uid://c0lfqfh1twfah" path="res://art/Wooden_Door.png" id="5_47427"]
+[ext_resource type="Texture2D" uid="uid://c02g85gdmseuk" path="res://art/Wooden_Wall.png" id="6_rixen"]
+[ext_resource type="Texture2D" uid="uid://drc2iwcs8asqd" path="res://art/Goat_Head.png" id="7_kfpqs"]
+[ext_resource type="Texture2D" uid="uid://c2ly0d5vm7mpo" path="res://art/Guide_Sign.png" id="8_k7dpj"]
+[ext_resource type="Texture2D" uid="uid://b7ybl2qn6ubfk" path="res://art/Metal_Door.png" id="9_jmxwb"]
+[ext_resource type="Texture2D" uid="uid://lo80e1x1msot" path="res://art/Metal_Wall.png" id="10_7uqb1"]
+[ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="11_2u4yx"]
+[ext_resource type="Texture2D" uid="uid://crhtedrth4wp6" path="res://art/Old_Grave.png" id="12_ehbwp"]
+[ext_resource type="Texture2D" uid="uid://b4lo8upbrn44b" path="res://art/Thin_Metal_Wall.png" id="13_10t7c"]
+[ext_resource type="Texture2D" uid="uid://decnkpb4gtgka" path="res://art/Thin_Wooden_Wall.png" id="14_xmsjt"]
+[ext_resource type="PackedScene" uid="uid://d3vuyh8ojuk4p" path="res://scenes/wooden_wall.tscn" id="15_sb4mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syekd"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en3lg"]
+atlas = ExtResource("2_h4phb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlwuv"]
+atlas = ExtResource("2_h4phb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8y0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en3lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlwuv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0sdr"]
+texture = ExtResource("3_1y1b3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t66hn"]
+texture = ExtResource("4_oenwh")
+0:0/next_alternative_id = 2
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5bcnv"]
+texture = ExtResource("5_47427")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53a7o"]
+texture = ExtResource("6_rixen")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwssb"]
+texture = ExtResource("7_kfpqs")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esafo"]
+texture = ExtResource("8_k7dpj")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqfre"]
+texture = ExtResource("9_jmxwb")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhvyg"]
+texture = ExtResource("10_7uqb1")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggw8v"]
+texture = ExtResource("11_2u4yx")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5tmn"]
+texture = ExtResource("12_ehbwp")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qv1h"]
+texture = ExtResource("13_10t7c")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkoox"]
+texture = ExtResource("14_xmsjt")
+
+[sub_resource type="TileSet" id="TileSet_0th5u"]
+sources/0 = SubResource("TileSetAtlasSource_b0sdr")
+sources/1 = SubResource("TileSetAtlasSource_t66hn")
+sources/2 = SubResource("TileSetAtlasSource_cwssb")
+sources/3 = SubResource("TileSetAtlasSource_esafo")
+sources/4 = SubResource("TileSetAtlasSource_pqfre")
+sources/5 = SubResource("TileSetAtlasSource_nhvyg")
+sources/6 = SubResource("TileSetAtlasSource_ggw8v")
+sources/7 = SubResource("TileSetAtlasSource_w5tmn")
+sources/8 = SubResource("TileSetAtlasSource_7qv1h")
+sources/9 = SubResource("TileSetAtlasSource_lkoox")
+sources/10 = SubResource("TileSetAtlasSource_5bcnv")
+sources/11 = SubResource("TileSetAtlasSource_53a7o")
+
+[node name="House" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Ghost" type="Node" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Ghost"]
+script = ExtResource("1_qlhed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_syekd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ghost/CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_r8y0s")
+autoplay = "default"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD3//v/AQAAAAAAAAD3//z/AQAAAAAAAAD3//3/AQAAAAAAAAD3//7/AQAAAAAAAAD3////AQAAAAAAAAD3/wAAAQAAAAAAAAD3/wEAAQAAAAAAAAD3/wIAAQAAAAAAAAD3/wMAAQAAAAAAAAD3/wQAAQAAAAAAAAD4//v/AQAAAAAAAAD4//z/AQAAAAAAAAD4//3/AQAAAAAAAAD4//7/AQAAAAAAAAD4////AQAAAAAAAAD4/wAAAQAAAAAAAAD4/wEAAQAAAAAAAAD4/wIAAQAAAAAAAAD4/wMAAQAAAAAAAAD4/wQAAQAAAAAAAAD5//v/AQAAAAAAAAD5//z/AQAAAAAAAAD5//3/AQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wQAAQAAAAAAAAD6//v/AQAAAAAAAAD6//z/AQAAAAAAAAD6//3/AQAAAAAAAAD6//7/AQAAAAAAAAD6////AQAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD6/wMAAQAAAAAAAAD6/wQAAQAAAAAAAAD7//v/AQAAAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAAAAAD7//7/AQAAAAAAAAD7////AQAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wMAAQAAAAAAAAD7/wQAAQAAAAAAAAD8//v/AQAAAAAAAAD8//z/AQAAAAAAAAD8//3/AQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wQAAQAAAAAAAAD9//v/AQAAAAAAAAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wQAAQAAAAAAAAD+//v/AQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wQAAQAAAAAAAAD///v/AQAAAAAAAAD///z/AQAAAAAAAAD///3/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAAAAPv/AQAAAAAAAAAAAPz/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAABAPv/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAPv/AQAAAAAAAAACAPz/AQAAAAAAAAACAP3/AQAAAAAAAAACAP7/AQAAAAAAAAACAP//AQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAADAPv/AQAAAAAAAAADAPz/AQAAAAAAAAADAP3/AQAAAAAAAAADAP7/AQAAAAAAAAADAP//AQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAPv/AQAAAAAAAAAEAPz/AQAAAAAAAAAEAP3/AQAAAAAAAAAEAP7/AQAAAAAAAAAEAP//AQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAPv/AQAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAPv/AQAAAAAAAAAGAPz/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAPv/AQAAAAAAAAAIAPz/AQAAAAAAAAAIAP3/AQAAAAAAAAAIAP7/AQAAAAAAAAAIAP//AQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_0th5u")
+
+[node name="WoodenWall" parent="." instance=ExtResource("15_sb4mj")]
+position = Vector2(-34, -4)
+
+[node name="WoodenWall2" parent="." instance=ExtResource("15_sb4mj")]
+position = Vector2(-50, -4)
