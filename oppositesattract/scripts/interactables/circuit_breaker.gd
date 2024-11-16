@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var metal_door: Node2D
+@export var door_array: Array[Node2D] = []
 
 @onready var circuit_breaker_sprite: AnimatedSprite2D = $circuit_breaker_sprite
 @onready var ghost_interact: Node = $ghost_interact
@@ -17,11 +17,13 @@ func toggle():
 
 func on():
 	circuit_breaker_sprite.frame = 1
-	metal_door.open()
+	for door in door_array:
+		door.toggle()
 		
 func off():
 	circuit_breaker_sprite.frame = 0
-	metal_door.close()
+	for door in door_array:
+		door.toggle()
 	
 
 

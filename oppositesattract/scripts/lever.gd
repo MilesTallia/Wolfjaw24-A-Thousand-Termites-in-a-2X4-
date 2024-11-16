@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var metal_door: Node2D
+@export var door_array: Array[Node2D] = []
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -16,11 +16,13 @@ func _input(event):
 
 func on():
 	animated_sprite_2d.frame = 1
-	metal_door.open()
+	for door in door_array:
+		door.toggle()
 		
 func off():
 	animated_sprite_2d.frame = 0
-	metal_door.close()
+	for door in door_array:
+		door.toggle()
 	
 
 

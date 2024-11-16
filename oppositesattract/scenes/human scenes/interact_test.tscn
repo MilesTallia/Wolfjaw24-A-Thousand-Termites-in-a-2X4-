@@ -18,8 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_ghost_timer_timer_timeout() -> void:
 	$ghost_timer.value += 1
 	if $ghost_timer.value >= 20:
-		ghost_timer_timer.stop()
-		ghost_timer.hide()
+		$ghost_timer.value = 0
+		circuit_breaker.toggle()
 		
 
 
