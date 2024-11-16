@@ -11,3 +11,6 @@ func _on_instructions_pressed() -> void:
 
 func _on_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Tutorial levels/tutorial1.tscn")
+
+func _on_start_new_game_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Levels/level1.tscn")
