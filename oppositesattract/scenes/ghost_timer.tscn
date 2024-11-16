@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dlmj1wx8m76wd"]
+[gd_scene format=3 uid="uid://cwnfbboqr4awi"]
 
 [node name="GhostTimer" type="TextureProgressBar"]
 offset_right = 40.0
