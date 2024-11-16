@@ -24,6 +24,7 @@ scale = Vector2(0.623535, 0.623535)
 texture = ExtResource("2_6y115")
 
 [node name="background darken" type="Panel" parent="."]
+layout_mode = 0
 offset_left = -72.0
 offset_top = -87.0
 offset_right = 1239.0

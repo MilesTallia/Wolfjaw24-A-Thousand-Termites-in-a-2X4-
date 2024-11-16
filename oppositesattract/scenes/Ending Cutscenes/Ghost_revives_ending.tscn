@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwhlo5iq11xgo"]
+[gd_scene load_steps=18 format=3 uid="uid://cwhlo5iq11xgo"]
 
 [ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_3x3gb"]
 [ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_oyeww"]
 [ext_resource type="Script" path="res://scripts/simple_flip.gd" id="3_b6cub"]
 [ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_mepge"]
 [ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="4_j7771"]
+[ext_resource type="PackedScene" uid="uid://cnqvfmkmlnqhv" path="res://scenes/Ending Cutscenes/esc_to_continue.tscn" id="6_aeirt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tk6o8"]
 
@@ -29,6 +30,33 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_gl32e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../CharacterBody2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 26)]
+}
 
 [sub_resource type="Animation" id="Animation_gbu5f"]
 resource_name = "greeting revived friend"
@@ -56,33 +84,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(6, 26), Vector2(6, 26), Vector2(6, 26), Vector2(6, 6), Vector2(-20, 6), Vector2(-20, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_gl32e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-20, 100)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../CharacterBody2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6, 26)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nh0t2"]
@@ -159,3 +160,13 @@ autoplay = "default"
 [node name="GhostBlock" type="Sprite2D" parent="."]
 position = Vector2(6, 26)
 texture = ExtResource("4_j7771")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+
+[node name="END ESC" parent="Control" instance=ExtResource("6_aeirt")]
+layout_mode = 1

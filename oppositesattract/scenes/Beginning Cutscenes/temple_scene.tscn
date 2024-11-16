@@ -1,12 +1,214 @@
-[gd_scene load_steps=4 format=3 uid="uid://bggy71xgjhgjh"]
+[gd_scene load_steps=18 format=3 uid="uid://bggy71xgjhgjh"]
 
 [ext_resource type="PackedScene" uid="uid://bjgjku1f43gbv" path="res://scenes/Beginning Cutscenes/Textbox.tscn" id="1_2pdjc"]
 [ext_resource type="PackedScene" uid="uid://djqvwofwavhrg" path="res://scenes/Beginning Cutscenes/lightning_animation.tscn" id="2_4ye2x"]
 [ext_resource type="PackedScene" uid="uid://cer6fqnxl4jov" path="res://scenes/Beginning Cutscenes/enter_to_continue.tscn" id="3_hmc8y"]
+[ext_resource type="Texture2D" uid="uid://dsvxe0sxcmwla" path="res://art/crypt.png" id="4_qxt2t"]
+[ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="5_t0ilb"]
+[ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="6_2ahag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uv8gj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdshv"]
+atlas = ExtResource("5_t0ilb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a68xq"]
+atlas = ExtResource("5_t0ilb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2mao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdshv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a68xq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_gu5yp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CharacterBody2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 100)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../CharacterBody2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nurrx"]
+resource_name = "enter crypt"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, 100), Vector2(73, -11), Vector2(73, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CharacterBody2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, 100), Vector2(-20, 100), Vector2(73, -20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../CharacterBody2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(7, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wndbj"]
+_data = {
+"RESET": SubResource("Animation_gu5yp"),
+"enter crypt": SubResource("Animation_nurrx")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tciqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4k6c"]
+atlas = ExtResource("6_2ahag")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xnb7"]
+atlas = ExtResource("6_2ahag")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyt6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4k6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xnb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TempleScene" type="Node2D"]
 
-[node name="weird lightning control parent" type="Control" parent="."]
+[node name="Crypt" type="Sprite2D" parent="."]
+texture = ExtResource("4_qxt2t")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-20, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_uv8gj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_o2mao")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_wndbj")
+}
+autoplay = "enter crypt"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(-20, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("CircleShape2D_tciqs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+sprite_frames = SubResource("SpriteFrames_eyt6a")
+autoplay = "default"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -144.0
+offset_top = -81.0
+offset_right = -104.0
+offset_bottom = -41.0
+scale = Vector2(0.25, 0.25)
+
+[node name="weird lightning control parent" type="Control" parent="Control2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -99.0
@@ -14,21 +216,22 @@ offset_top = -121.0
 offset_right = 1324.0
 offset_bottom = 808.0
 
-[node name="Lightning Animation" parent="weird lightning control parent" instance=ExtResource("2_4ye2x")]
+[node name="Lightning Animation" parent="Control2/weird lightning control parent" instance=ExtResource("2_4ye2x")]
 layout_mode = 1
 
-[node name="Textbox" parent="." instance=ExtResource("1_2pdjc")]
+[node name="Textbox" parent="Control2" instance=ExtResource("1_2pdjc")]
+layout_mode = 1
 offset_left = 566.0
 offset_top = 608.0
 offset_right = 566.0
 offset_bottom = 608.0
 size_flags_horizontal = 4
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="Control2"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1244.0
 offset_bottom = 640.0
 
-[node name="Textbox2" parent="Control" instance=ExtResource("3_hmc8y")]
+[node name="Textbox2" parent="Control2/Control" instance=ExtResource("3_hmc8y")]
 layout_mode = 1

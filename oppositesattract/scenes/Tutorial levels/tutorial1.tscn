@@ -49,7 +49,7 @@ text = "<- Exit down the stairs"
 
 [node name="Stairs" parent="." instance=ExtResource("6_hsk8n")]
 position = Vector2(-120, -56)
-next_room_path = "res://scenes/Levels/level1.tscn"
+next_room_path = "res://scenes/Tutorial levels/tutorial2.tscn"
 
 [node name="ghost" parent="." instance=ExtResource("3_obcm5")]
 position = Vector2(-95, 71)
