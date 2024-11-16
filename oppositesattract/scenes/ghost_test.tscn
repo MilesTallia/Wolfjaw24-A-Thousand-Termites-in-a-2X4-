@@ -9,7 +9,6 @@
 zoom = Vector2(4, 4)
 
 [node name="ghost" parent="." instance=ExtResource("1_4245q")]
-collision_layer = 5
 
 [node name="button_prompt" parent="." instance=ExtResource("2_fmtu2")]
 position = Vector2(1, -31)

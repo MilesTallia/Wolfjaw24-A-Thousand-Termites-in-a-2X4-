@@ -29,6 +29,7 @@ animations = [{
 }]
 
 [node name="ghost" type="CharacterBody2D"]
+collision_layer = 8
 script = ExtResource("1_4r3b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
