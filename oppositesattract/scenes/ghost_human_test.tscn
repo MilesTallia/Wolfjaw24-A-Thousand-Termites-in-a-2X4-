@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bgjp3mgjuhnay"]
+[gd_scene load_steps=9 format=4 uid="uid://dd21d5jy2t5sj"]
 
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost.tscn" id="1_wn17p"]
-[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human.tscn" id="2_h21bm"]
+[ext_resource type="PackedScene" path="res://scenes/human.tscn" id="2_h21bm"]
 [ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="3_l8gp6"]
 [ext_resource type="PackedScene" uid="uid://dxelhg66f3gk1" path="res://scenes/objects/Wooden_Wall.tscn" id="4_giw3b"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="5_lcr2w"]

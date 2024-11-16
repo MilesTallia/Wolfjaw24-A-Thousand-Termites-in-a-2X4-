@@ -1,0 +1,161 @@
+[gd_scene load_steps=17 format=3 uid="uid://cwhlo5iq11xgo"]
+
+[ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_3x3gb"]
+[ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_oyeww"]
+[ext_resource type="Script" path="res://scripts/simple_flip.gd" id="3_b6cub"]
+[ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_mepge"]
+[ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="4_j7771"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tk6o8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goj4j"]
+atlas = ExtResource("3_mepge")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuq1c"]
+atlas = ExtResource("3_mepge")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3heoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goj4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuq1c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_gbu5f"]
+resource_name = "greeting revived friend"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, 100), Vector2(-20, 6), Vector2(-20, 6), Vector2(-20, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../CharacterBody2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 3.5, 4.66667, 6.26667, 8.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 26), Vector2(6, 26), Vector2(6, 26), Vector2(6, 6), Vector2(-20, 6), Vector2(-20, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_gl32e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../CharacterBody2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 26)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh0t2"]
+_data = {
+"RESET": SubResource("Animation_gl32e"),
+"greeting revived friend": SubResource("Animation_gbu5f")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vhkx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ftrx"]
+atlas = ExtResource("3_mepge")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npsbg"]
+atlas = ExtResource("3_mepge")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhiw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ftrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npsbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GhostRevivesEnding" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Graveyard" type="Sprite2D" parent="."]
+texture = ExtResource("1_3x3gb")
+
+[node name="NewGrave" type="Sprite2D" parent="."]
+position = Vector2(6, 6)
+texture = ExtResource("2_oyeww")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-20, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_tk6o8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_3heoj")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_nh0t2")
+}
+autoplay = "greeting revived friend"
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+modulate = Color(1.34766e-06, 0.93276, 0.93412, 1)
+position = Vector2(6, 26)
+script = ExtResource("3_b6cub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("CircleShape2D_7vhkx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+sprite_frames = SubResource("SpriteFrames_jhiw5")
+autoplay = "default"
+
+[node name="GhostBlock" type="Sprite2D" parent="."]
+position = Vector2(6, 26)
+texture = ExtResource("4_j7771")
