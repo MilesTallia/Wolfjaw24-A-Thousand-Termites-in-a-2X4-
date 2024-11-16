@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://kxgqk1ar5n5a"]
+
+[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_h10h2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
+texture = ExtResource("1_h10h2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.1875, 8, -3.0625, 8, 2.875, -8, 2.875)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -3.9375, 8, 4, -8, 4.25)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_hb16u")

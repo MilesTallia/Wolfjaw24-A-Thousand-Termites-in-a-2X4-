@@ -1,25 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://ca23l6e5ptsoj"]
+[gd_scene load_steps=11 format=4 uid="uid://ca23l6e5ptsoj"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_rap0j"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_gfan8"]
+[ext_resource type="TileSet" uid="uid://cdxejn31i51ac" path="res://scenes/Levels/stone_set.tres" id="2_qgirc"]
 [ext_resource type="PackedScene" path="res://scenes/Title_Screen/pause_menu.tscn" id="3_lcmh4"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="4_56k4f"]
 [ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_kw3pu"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_1ihs7"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okf5l"]
-texture = ExtResource("2_gfan8")
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_0ehle"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_okf5l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
 texture = ExtResource("2_gfan8")
@@ -31,8 +19,8 @@ texture = ExtResource("2_gfan8")
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_kyp5v"]
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 4
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_hb16u")
 
 [node name="Level1" type="Node2D"]
@@ -40,7 +28,7 @@ script = ExtResource("1_rap0j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAPz/AAAAAAQAAGADAP3/AAAAAAQAAGADAP7/AAAAAAQAAGADAP//AAAAAAQAAGAFAAAAAAAAAAQAAAAGAAAAAAAAAAQAAAAHAAAAAAAAAAQAAAADAAAAAAAAAAUAAAD+/wAAAAAAAAUAAAACAAAAAAAAAAQAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAD+////AAAAAAQAAFD+//7/AAAAAAQAAFD+//3/AAAAAAQAAFD+//z/AAAAAAQAAFD4/wQAAAAAAAUAAAD3/wQAAAAAAAUAAAD3/wMAAAAAAAUAAAD3/wIAAAAAAAUAAAD3/wEAAAAAAAUAAAD3/wAAAAAAAAUAAAD3////AAAAAAUAAAD3//7/AAAAAAUAAAD3//3/AAAAAAUAAAD3//z/AAAAAAUAAAD3//v/AAAAAAUAAAD4//v/AAAAAAUAAAD5//v/AAAAAAUAAAD6//v/AAAAAAUAAAD7//v/AAAAAAUAAAD8//v/AAAAAAUAAAD9//v/AAAAAAUAAAD+//v/AAAAAAUAAAD///v/AAAAAAUAAAAAAPv/AAAAAAUAAAABAPv/AAAAAAUAAAACAPv/AAAAAAUAAAADAPv/AAAAAAUAAAAEAPv/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAIAPv/AAAAAAUAAAAIAPz/AAAAAAUAAAAIAP3/AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAIAAAAAAAAAAUAAAAIAAEAAAAAAAUAAAAIAAIAAAAAAAUAAAAIAAMAAAAAAAUAAAAIAAQAAAAAAAUAAAAHAAQAAAAAAAUAAAAGAAQAAAAAAAUAAAAFAAQAAAAAAAUAAAAEAAQAAAAAAAUAAAADAAQAAAAAAAUAAAACAAQAAAAAAAUAAAABAAQAAAAAAAUAAAAAAAQAAAAAAAUAAAD//wQAAAAAAAUAAAD+/wQAAAAAAAUAAAD9/wQAAAAAAAUAAAD8/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAAIAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAADAAUAAAAAAAUAAAACAAUAAAAAAAUAAAABAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAD//wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD3/wUAAAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2/wUAAAAAAAUAAAD2/wQAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wAAAAAAAAUAAAD2////AAAAAAUAAAD2//7/AAAAAAUAAAD2//3/AAAAAAUAAAD2//z/AAAAAAUAAAD2//v/AAAAAAUAAAD2//r/AAAAAAUAAAAJAPr/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAEAAAAAAAUAAAAJAAAAAAAAAAUAAAA=")
-tile_set = SubResource("TileSet_0ehle")
+tile_set = ExtResource("2_qgirc")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD5/wAAAAAAAAEAAAD4/wAAAAAAAAEAAAA=")
