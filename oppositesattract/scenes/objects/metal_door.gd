@@ -4,11 +4,10 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $AnimatableBody2D/Sprite2D
 
 
-func open():
-	collision_shape_2d.disabled = true
-	sprite_2d.visible = false
-
-	
-func close():
-	collision_shape_2d.disabled = false
-	sprite_2d.visible = true
+func toggle():
+	if sprite_2d.visible == false:
+		collision_shape_2d.disabled = false
+		sprite_2d.visible = true
+	else:
+		collision_shape_2d.disabled = true
+		sprite_2d.visible = false

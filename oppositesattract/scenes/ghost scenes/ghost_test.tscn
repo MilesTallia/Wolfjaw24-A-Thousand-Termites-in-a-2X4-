@@ -20,9 +20,8 @@ zoom = Vector2(4, 4)
 [node name="ghost" parent="." instance=ExtResource("1_4245q")]
 position = Vector2(14, 38)
 
-[node name="lever" parent="." node_paths=PackedStringArray("metal_door") instance=ExtResource("2_1n7nm")]
+[node name="lever" parent="." instance=ExtResource("2_1n7nm")]
 position = Vector2(-61, 30)
-metal_door = NodePath("../MetalDoor")
 
 [node name="MetalDoor" parent="." instance=ExtResource("4_whgph")]
 position = Vector2(72, 8)
@@ -38,8 +37,6 @@ position = Vector2(-16, 24)
 collision_layer = 13
 collision_mask = 13
 
-[connection signal="body_entered" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_entered"]
-[connection signal="body_exited" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_exited"]
 [connection signal="ready" from="Human/CharacterBody2D" to="Human/CharacterBody2D" method="_on_ready"]
 
 [editable path="ghost"]
