@@ -13,7 +13,6 @@ func _physics_process(_delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().is_in_group("pushable"):
-			print("hi")
 			collision.get_collider().apply_central_impulse(-collision.get_normal() * 100)
 	
 	if velocity.x > 0:
