@@ -17,18 +17,22 @@ texture = ExtResource("1_7u48j")
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ech7f"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_rr20v")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lohjo"]
 texture = ExtResource("1_7u48j")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.9375, 8, -3, 8, 2.9375, -8, 3.1875)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4.1875, 8, 4.125, -8, 4.125)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_02bvp"]
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 4
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_lohjo")
 
 [node name="GhostTest" type="Node2D"]
@@ -46,8 +50,6 @@ zoom = Vector2(4, 4)
 
 [node name="ghost" parent="." instance=ExtResource("1_4245q")]
 position = Vector2(14, 38)
-collision_layer = 13
-collision_mask = 13
 
 [node name="lever" parent="." instance=ExtResource("2_1n7nm")]
 position = Vector2(-61, 30)
@@ -65,6 +67,10 @@ next_room_path = "res://scenes/ghost scenes/ghost_test.tscn"
 
 [node name="Human" parent="." instance=ExtResource("6_knj5y")]
 position = Vector2(-16, 24)
+
+[node name="CharacterBody2D" parent="Human" index="0"]
+collision_layer = 13
+collision_mask = 13
 
 [connection signal="body_entered" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_entered"]
 [connection signal="body_exited" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_exited"]

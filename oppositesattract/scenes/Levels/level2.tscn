@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_1bkjo"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_oq7xl"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_34o5i"]
-[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_w0pio"]
+[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_w0pio"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="5_4r8a3"]
-[ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="7_pq587"]
+[ext_resource type="PackedScene" path="res://scenes/Title_Screen/pause_menu.tscn" id="7_pq587"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okf5l"]
 texture = ExtResource("2_oq7xl")
@@ -17,7 +17,8 @@ texture = ExtResource("2_oq7xl")
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_0ehle"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_okf5l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
@@ -43,10 +44,10 @@ tile_map_data = PackedByteArray("AAADAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_kyp5v")
 
 [node name="ghost" parent="." instance=ExtResource("3_34o5i")]
-position = Vector2(-136, 8)
+position = Vector2(-115, 7)
 
 [node name="Human" parent="." instance=ExtResource("4_w0pio")]
-position = Vector2(-137, 40)
+position = Vector2(-117, 46)
 
 [node name="MetalDoor" parent="." instance=ExtResource("5_4r8a3")]
 position = Vector2(-56, -56)

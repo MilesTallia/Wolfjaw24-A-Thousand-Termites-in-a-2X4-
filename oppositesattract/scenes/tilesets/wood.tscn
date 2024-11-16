@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=4 uid="uid://d3yx4g2lcw1p1"]
+
+[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_jiq5f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lohjo"]
+texture = ExtResource("1_jiq5f")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.9375, 8, -3, 8, 2.9375, -8, 3.1875)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4.1875, 8, 4.125, -8, 4.125)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_02bvp"]
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
+sources/0 = SubResource("TileSetAtlasSource_lohjo")
+
+[node name="Wood" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAD3////AAAAAAEAAAD4////AAAAAAEAAAD5////AAAAAAEAAAD6////AAAAAAEAAAD7////AAAAAAEAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAD/////AAAAAAIAAAD///v/AAAAAAEAAGD///z/AAAAAAEAAGD///3/AAAAAAEAAGD///7/AAAAAAEAAGA=")
+tile_set = SubResource("TileSet_02bvp")
