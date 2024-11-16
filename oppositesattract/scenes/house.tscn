@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://nsql6caoujco"]
+[gd_scene load_steps=34 format=4 uid="uid://nsql6caoujco"]
 
 [ext_resource type="Script" path="res://scripts/ghostMovement.gd" id="1_qlhed"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_h4phb"]
@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://crhtedrth4wp6" path="res://art/Old_Grave.png" id="12_ehbwp"]
 [ext_resource type="Texture2D" uid="uid://b4lo8upbrn44b" path="res://art/Thin_Metal_Wall.png" id="13_10t7c"]
 [ext_resource type="Texture2D" uid="uid://decnkpb4gtgka" path="res://art/Thin_Wooden_Wall.png" id="14_xmsjt"]
-[ext_resource type="PackedScene" uid="uid://d3vuyh8ojuk4p" path="res://scenes/wooden_wall.tscn" id="15_sb4mj"]
+[ext_resource type="PackedScene" uid="uid://d3vuyh8ojuk4p" path="res://scenes/objects/thin_wooden_wall.tscn" id="15_sb4mj"]
+[ext_resource type="PackedScene" uid="uid://dxelhg66f3gk1" path="res://scenes/objects/Wooden_Wall.tscn" id="16_lb4nf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syekd"]
 size = Vector2(16, 16)
@@ -126,3 +127,6 @@ position = Vector2(-34, -4)
 
 [node name="WoodenWall2" parent="." instance=ExtResource("15_sb4mj")]
 position = Vector2(-50, -4)
+
+[node name="WoodenWall3" parent="." instance=ExtResource("16_lb4nf")]
+position = Vector2(-31, 38)
