@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://iqy5vlnae4dd"]
+[gd_scene load_steps=9 format=4 uid="uid://iqy5vlnae4dd"]
 
-[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_menu.gd" id="1_0yi6g"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_7u48j"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="1_4245q"]
-[ext_resource type="PackedScene" path="res://scenes/lever.tscn" id="2_1n7nm"]
-[ext_resource type="PackedScene" uid="uid://dkfpu4qt8dktl" path="res://scenes/Title_Screen/pause_menu.tscn" id="2_4w4y3"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/lever.tscn" id="2_1n7nm"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="4_whgph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr20v"]
@@ -32,7 +30,6 @@ physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_lohjo")
 
 [node name="GhostTest" type="Node2D"]
-script = ExtResource("1_0yi6g")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD2/wAAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wQAAAAAAAUAAAD3/wUAAAAAAAUAAAD2/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD8/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD//wUAAAAAAAUAAAAAAAUAAAAAAAUAAAABAAUAAAAAAAUAAAACAAUAAAAAAAUAAAADAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAIAAUAAAAAAAUAAAAJAAUAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAMAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAEAAAAAAAUAAAAJAAAAAAAAAAUAAAAJAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPr/AAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2//r/AAAAAAUAAAD2//v/AAAAAAUAAAD2//z/AAAAAAUAAAD2//3/AAAAAAUAAAD2//7/AAAAAAUAAAD2////AAAAAAUAAAADAPv/AAAAAAQAAGADAPz/AAAAAAQAAGADAP3/AAAAAAQAAGADAP7/AAAAAAQAAGADAP//AAAAAAQAAGAFAAAAAAAAAAQAAAAGAAAAAAAAAAQAAAAHAAAAAAAAAAQAAAAIAAAAAAAAAAQAAAADAAAAAAAAAAUAAAA=")
@@ -45,26 +42,14 @@ tile_set = SubResource("TileSet_02bvp")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("2_4w4y3")]
-
 [node name="ghost" parent="." instance=ExtResource("1_4245q")]
 position = Vector2(14, 38)
 collision_layer = 13
 collision_mask = 13
 
-[node name="lever" parent="." instance=ExtResource("2_1n7nm")]
+[node name="lever" parent="." node_paths=PackedStringArray("metal_door") instance=ExtResource("2_1n7nm")]
 position = Vector2(-61, 30)
-
-[node name="button_prompt" parent="lever" index="0"]
-collision_layer = 13
-collision_mask = 13
+metal_door = NodePath("../MetalDoor")
 
 [node name="MetalDoor" parent="." instance=ExtResource("4_whgph")]
 position = Vector2(72, 8)
-
-[connection signal="body_entered" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_entered"]
-[connection signal="body_exited" from="lever/button_prompt" to="lever" method="_on_button_prompt_body_exited"]
-
-[editable path="ghost"]
-[editable path="lever"]
-[editable path="lever/button_prompt"]
