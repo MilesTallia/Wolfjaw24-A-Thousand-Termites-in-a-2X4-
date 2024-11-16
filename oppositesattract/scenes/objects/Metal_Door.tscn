@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://2xbcr255b16g"]
+
+[ext_resource type="Texture2D" uid="uid://b7ybl2qn6ubfk" path="res://art/Metal_Door.png" id="1_8ytvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un6xb"]
+size = Vector2(16, 6)
+
+[node name="MetalDoor" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_8ytvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_un6xb")
