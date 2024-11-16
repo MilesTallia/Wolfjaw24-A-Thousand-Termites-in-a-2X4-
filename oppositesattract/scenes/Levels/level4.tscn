@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=4 uid="uid://tmkgfy4md0fr"]
+
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_hm84m"]
+[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_vx6ty"]
+[ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_jmjyy"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_api0f"]
+[ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_koaac"]
+[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_ow3xq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okf5l"]
+texture = ExtResource("2_vx6ty")
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_0ehle"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_okf5l")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
+texture = ExtResource("2_vx6ty")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kyp5v"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_hb16u")
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_hm84m")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4/wQAAAAAAAUAAAD3/wQAAAAAAAUAAAD3/wMAAAAAAAUAAAD3////AAAAAAUAAAD3//7/AAAAAAUAAAD3//3/AAAAAAUAAAD3//z/AAAAAAUAAAD3//v/AAAAAAUAAAD4//v/AAAAAAUAAAD5//v/AAAAAAUAAAD6//v/AAAAAAUAAAD7//v/AAAAAAUAAAD8//v/AAAAAAUAAAD9//v/AAAAAAUAAAACAPv/AAAAAAUAAAADAPv/AAAAAAUAAAAEAPv/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAIAPv/AAAAAAUAAAAIAPz/AAAAAAUAAAAIAP3/AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAIAAAAAAAAAAUAAAAIAAEAAAAAAAUAAAAIAAIAAAAAAAUAAAAIAAMAAAAAAAUAAAAIAAQAAAAAAAUAAAAHAAQAAAAAAAUAAAAFAAQAAAAAAAUAAAAEAAQAAAAAAAUAAAADAAQAAAAAAAUAAAACAAQAAAAAAAUAAAABAAQAAAAAAAUAAAAAAAQAAAAAAAUAAAD//wQAAAAAAAUAAAD+/wQAAAAAAAUAAAD9/wQAAAAAAAUAAAD8/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAAIAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAADAAUAAAAAAAUAAAACAAUAAAAAAAUAAAABAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAD//wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD3/wUAAAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2/wUAAAAAAAUAAAD2/wQAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wAAAAAAAAUAAAD2////AAAAAAUAAAD2//7/AAAAAAUAAAD2//3/AAAAAAUAAAD2//z/AAAAAAUAAAD2//v/AAAAAAUAAAD2//r/AAAAAAUAAAAJAPr/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAAEAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAJAAAAAAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAD8/wQAAAAAAAUAAAD7/wQAAAAAAAUAAAD6/wQAAAAAAAUAAAD3/wEAAAAAAAUAAAD3/wIAAAAAAAUAAAD3/wAAAAAAAAUAAAABAPv/AAAAAAUAAAAAAPv/AAAAAAUAAAD///v/AAAAAAUAAAD+//v/AAAAAAUAAAD7/wIAAAAAAAUAAAD7//7/AAAAAAUAAAAEAAIAAAAAAAUAAAAEAP7/AAAAAAUAAAAEAAAAAAAAAAUAAAD7/wAAAAAAAAUAAAADAAIAAAAAAAQAAAACAAIAAAAAAAQAAAABAAIAAAAAAAQAAAAAAAIAAAAAAAQAAAD//wIAAAAAAAQAAAD+/wIAAAAAAAQAAAD9/wIAAAAAAAQAAAD8/wIAAAAAAAQAAAADAAAAAAAAAAQAAAACAAAAAAAAAAQAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAD//wAAAAAAAAQAAAD+/wAAAAAAAAQAAAD9/wAAAAAAAAQAAAD8/wAAAAAAAAQAAAADAP7/AAAAAAQAAAACAP7/AAAAAAQAAAABAP7/AAAAAAQAAAAAAP7/AAAAAAQAAAD///7/AAAAAAQAAAD+//7/AAAAAAQAAAD9//7/AAAAAAQAAAD8//7/AAAAAAQAAAD6/wIAAAAAAAQAAAD4/wIAAAAAAAQAAAAFAAAAAAAAAAQAAAAHAAAAAAAAAAQAAAD6//7/AAAAAAQAAAD4//7/AAAAAAQAAAA=")
+tile_set = SubResource("TileSet_0ehle")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAD6/wAAAAAAAAEAAAD5/wAAAAAAAAEAAAD4/wAAAAAAAAEAAAAHAP7/AAAAAAEAAAAGAP7/AAAAAAEAAAAFAP7/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_kyp5v")
+
+[node name="ghost" parent="." instance=ExtResource("3_jmjyy")]
+position = Vector2(-104, 71)
+
+[node name="Human" parent="." instance=ExtResource("4_api0f")]
+position = Vector2(105, 72)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_koaac")]
+visible = false
+
+[node name="MetalDoor" parent="." instance=ExtResource("6_ow3xq")]
+position = Vector2(-104, 40)
+
+[node name="MetalDoor2" parent="." instance=ExtResource("6_ow3xq")]
+position = Vector2(-72, 24)
+rotation = 1.5708
+
+[node name="MetalDoor3" parent="." instance=ExtResource("6_ow3xq")]
+position = Vector2(104, 8)
+
+[node name="MetalDoor4" parent="." instance=ExtResource("6_ow3xq")]
+position = Vector2(72, -8)
+rotation = 1.5708
+
+[node name="MetalDoor5" parent="." instance=ExtResource("6_ow3xq")]
+position = Vector2(-104, -24)
