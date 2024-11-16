@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw00ygldifoq4"]
+
+[ext_resource type="Texture2D" uid="uid://c0lfqfh1twfah" path="res://art/Wooden_Door.png" id="1_0a0qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un6xb"]
+size = Vector2(16, 7)
+
+[node name="WoodenDoor" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_0a0qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_un6xb")

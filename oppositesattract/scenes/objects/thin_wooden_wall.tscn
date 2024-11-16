@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hlhf"]
 size = Vector2(16, 8)
 
-[node name="WoodenWall" type="Node2D"]
+[node name="ThinWoodenWall" type="Node2D"]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 

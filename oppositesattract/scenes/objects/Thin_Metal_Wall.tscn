@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddbbwu200rkyc"]
+
+[ext_resource type="Texture2D" uid="uid://b4lo8upbrn44b" path="res://art/Thin_Metal_Wall.png" id="1_m6m38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un6xb"]
+size = Vector2(16, 8)
+
+[node name="ThinMetalWall" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_m6m38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_un6xb")

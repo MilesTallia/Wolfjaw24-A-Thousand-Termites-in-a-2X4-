@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://nsql6caoujco"]
+[gd_scene load_steps=38 format=4 uid="uid://fls765ownnp4"]
 
 [ext_resource type="Script" path="res://scripts/ghostMovement.gd" id="1_qlhed"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_h4phb"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://decnkpb4gtgka" path="res://art/Thin_Wooden_Wall.png" id="14_xmsjt"]
 [ext_resource type="PackedScene" uid="uid://d3vuyh8ojuk4p" path="res://scenes/objects/thin_wooden_wall.tscn" id="15_sb4mj"]
 [ext_resource type="PackedScene" uid="uid://dxelhg66f3gk1" path="res://scenes/objects/Wooden_Wall.tscn" id="16_lb4nf"]
+[ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="17_vwccr"]
+[ext_resource type="PackedScene" uid="uid://ddbbwu200rkyc" path="res://scenes/objects/Thin_Metal_Wall.tscn" id="18_xlkq3"]
+[ext_resource type="PackedScene" uid="uid://c1t2fceptf7hl" path="res://scenes/objects/Metal_Wall.tscn" id="19_lekfq"]
+[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="20_hyp4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syekd"]
 size = Vector2(16, 16)
@@ -130,3 +134,21 @@ position = Vector2(-50, -4)
 
 [node name="WoodenWall3" parent="." instance=ExtResource("16_lb4nf")]
 position = Vector2(-31, 38)
+
+[node name="WoodenDoor" parent="." instance=ExtResource("17_vwccr")]
+position = Vector2(-123, 24)
+
+[node name="WoodenWall4" parent="." instance=ExtResource("16_lb4nf")]
+position = Vector2(-85, 36)
+
+[node name="WoodenWall5" parent="." instance=ExtResource("15_sb4mj")]
+position = Vector2(-79, 13)
+
+[node name="WoodenWall6" parent="." instance=ExtResource("18_xlkq3")]
+position = Vector2(-116, -1)
+
+[node name="WoodenWall7" parent="." instance=ExtResource("19_lekfq")]
+position = Vector2(-95, -29)
+
+[node name="WoodenWall8" parent="." instance=ExtResource("20_hyp4l")]
+position = Vector2(-50, -44)
