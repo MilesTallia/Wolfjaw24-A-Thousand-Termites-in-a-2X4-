@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://j4lrdv3ai61l"]
+
+[ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="1_7xxan"]
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/title_screen_buttons.gd" id="2_dpmg7"]
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dpmg7")
+
+[node name="Start New Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 318.0
+offset_right = 433.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("1_7xxan")
+theme_override_font_sizes/font_size = 30
+text = "start new game"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 529.0
+offset_right = 1107.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("1_7xxan")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 51.0
+offset_right = 211.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("1_7xxan")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
