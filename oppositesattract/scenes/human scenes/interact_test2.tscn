@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://haik0aqtg4vh"]
 
-[ext_resource type="PackedScene" uid="uid://b7xisdtf8u5up" path="res://scenes/ghost_interact.tscn" id="1_4ihj1"]
-[ext_resource type="PackedScene" path="res://scenes/ghost.tscn" id="2_01y8j"]
-[ext_resource type="PackedScene" uid="uid://bugls4r5tr7u4" path="res://scenes/sign.tscn" id="3_w6sgs"]
+[ext_resource type="PackedScene" uid="uid://b7xisdtf8u5up" path="res://scenes/ghost scenes/ghost_interact.tscn" id="1_4ihj1"]
+[ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="2_01y8j"]
+[ext_resource type="PackedScene" path="res://scenes/sign.tscn" id="3_w6sgs"]
 
 [node name="InteractTest2" type="Node2D"]
 

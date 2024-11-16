@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnrn67yal13un"]
+[gd_scene load_steps=7 format=3 uid="uid://c816vqoip243s"]
 
 [ext_resource type="Script" path="res://scripts/ghostMovement.gd" id="1_4r3b6"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="1_tqasu"]
