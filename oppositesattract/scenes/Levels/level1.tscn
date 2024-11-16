@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ca23l6e5ptsoj"]
+[gd_scene load_steps=12 format=4 uid="uid://ca23l6e5ptsoj"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_rap0j"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_gfan8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_kw3pu"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_1ihs7"]
+[ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="8_w003g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
 texture = ExtResource("2_gfan8")
@@ -49,6 +50,10 @@ position = Vector2(-8, 8)
 [node name="WoodenDoor" parent="." instance=ExtResource("7_1ihs7")]
 position = Vector2(-88, 8)
 rotation = 3.14159
+
+[node name="Stairs" parent="." instance=ExtResource("8_w003g")]
+position = Vector2(120, -56)
+next_room_path = "res://scenes/Levels/level2.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

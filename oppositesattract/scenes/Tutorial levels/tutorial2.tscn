@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dqj6b8c8y70h8"]
+[gd_scene load_steps=10 format=4 uid="uid://dqj6b8c8y70h8"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_nk51m"]
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_d1mb5"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_dnmye"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_r6pvt"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="7_b3m8c"]
-[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/lever.tscn" id="9_1036b"]
 
 [node name="Tutorial2" type="Node2D"]
 script = ExtResource("1_nk51m")
@@ -60,11 +59,6 @@ position = Vector2(-88, -24)
 
 [node name="MetalDoor2" parent="." instance=ExtResource("7_b3m8c")]
 position = Vector2(88, -24)
-
-[node name="lever" parent="." node_paths=PackedStringArray("metal_door") instance=ExtResource("9_1036b")]
-position = Vector2(104, -17)
-rotation = -1.5708
-metal_door = NodePath("../MetalDoor2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
