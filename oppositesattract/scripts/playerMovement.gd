@@ -20,5 +20,7 @@ func _physics_process(_delta):
 	if velocity.x == 0 && velocity.y == 0:
 		$AnimatedSprite2D.animation = "idle"
 		
+
+
 func _on_ready() -> void:
 	add_to_group("players")
