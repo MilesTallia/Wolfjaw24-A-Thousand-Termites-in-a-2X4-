@@ -1,49 +1,18 @@
-[gd_scene load_steps=11 format=4 uid="uid://iqy5vlnae4dd"]
+[gd_scene load_steps=8 format=3 uid="uid://iqy5vlnae4dd"]
 
-[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_7u48j"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="1_4245q"]
+[ext_resource type="PackedScene" uid="uid://cyuqscm1vhk53" path="res://scenes/tilesets/stone.tscn" id="1_xf4sf"]
 [ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/lever.tscn" id="2_1n7nm"]
+[ext_resource type="PackedScene" uid="uid://d3yx4g2lcw1p1" path="res://scenes/tilesets/wood.tscn" id="2_gsoyn"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="4_whgph"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="5_trud1"]
 [ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="6_knj5y"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr20v"]
-texture = ExtResource("1_7u48j")
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_ech7f"]
-physics_layer_0/collision_layer = 13
-physics_layer_0/collision_mask = 13
-sources/0 = SubResource("TileSetAtlasSource_rr20v")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lohjo"]
-texture = ExtResource("1_7u48j")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.9375, 8, -3, 8, 2.9375, -8, 3.1875)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4.1875, 8, 4.125, -8, 4.125)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_02bvp"]
-physics_layer_0/collision_layer = 5
-physics_layer_0/collision_mask = 5
-sources/0 = SubResource("TileSetAtlasSource_lohjo")
-
 [node name="GhostTest" type="Node2D"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD2/wAAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wQAAAAAAAUAAAD3/wUAAAAAAAUAAAD2/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD8/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD//wUAAAAAAAUAAAAAAAUAAAAAAAUAAAABAAUAAAAAAAUAAAACAAUAAAAAAAUAAAADAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAIAAUAAAAAAAUAAAAJAAUAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAMAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAEAAAAAAAUAAAAJAAAAAAAAAAUAAAAJAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPr/AAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2//r/AAAAAAUAAAD2//v/AAAAAAUAAAD2//z/AAAAAAUAAAD2//3/AAAAAAUAAAD2//7/AAAAAAUAAAD2////AAAAAAUAAAADAPv/AAAAAAQAAGADAPz/AAAAAAQAAGADAP3/AAAAAAQAAGADAP7/AAAAAAQAAGADAP//AAAAAAQAAGAFAAAAAAAAAAQAAAAGAAAAAAAAAAQAAAAHAAAAAAAAAAQAAAAIAAAAAAAAAAQAAAADAAAAAAAAAAUAAAA=")
-tile_set = SubResource("TileSet_ech7f")
+[node name="Stone" parent="." instance=ExtResource("1_xf4sf")]
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD3////AAAAAAEAAAD4////AAAAAAEAAAD5////AAAAAAEAAAD6////AAAAAAEAAAD7////AAAAAAEAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAD/////AAAAAAIAAAD///v/AAAAAAEAAGD///z/AAAAAAEAAGD///3/AAAAAAEAAGD///7/AAAAAAEAAGA=")
-tile_set = SubResource("TileSet_02bvp")
+[node name="Wood" parent="." instance=ExtResource("2_gsoyn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
