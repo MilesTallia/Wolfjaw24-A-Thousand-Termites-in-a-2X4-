@@ -13,10 +13,15 @@ position = Vector2(-97, -19)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="ghost_interact" parent="." instance=ExtResource("1_4ihj1")]
-
 [node name="ghost" parent="." instance=ExtResource("2_01y8j")]
 position = Vector2(-55, 0)
 
 [node name="sign" parent="." instance=ExtResource("3_w6sgs")]
 position = Vector2(-77, 30)
+
+[node name="MetalDoor" parent="." instance=ExtResource("5_w63yg")]
+position = Vector2(42, 32)
+
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("metal_door") instance=ExtResource("1_wsr5o")]
+position = Vector2(59, 0)
+metal_door = NodePath("../MetalDoor")

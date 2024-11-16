@@ -34,3 +34,6 @@ position = Vector2(0, -3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mjc0l")
+
+[connection signal="body_entered" from="button_prompt" to="." method="_on_button_prompt_body_entered"]
+[connection signal="body_exited" from="button_prompt" to="." method="_on_button_prompt_body_exited"]

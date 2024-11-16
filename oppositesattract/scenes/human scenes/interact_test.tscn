@@ -4,8 +4,10 @@
 resource_name = "interactTest.gd"
 script/source = "extends Area2D
 
+
 @onready var ghost_timer_timer: Timer = $ghost_timer_timer
 @onready var ghost_timer: TextureProgressBar = $ghost_timer
+@onready var circuit_breaker: Node2D = $\"..\"
 
 
 func _on_body_entered(body: Node2D) -> void:
