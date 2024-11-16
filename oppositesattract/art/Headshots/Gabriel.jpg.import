@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj47xutamjj34"
-path="res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"
+uid="uid://udyhy3tgl5ei"
+path="res://.godot/imported/Gabriel.jpg-2e3c82bf3fe2c2b046be80bfdfaab45a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Unlit_Candles.png"
-dest_files=["res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"]
+source_file="res://art/Headshots/Gabriel.jpg"
+dest_files=["res://.godot/imported/Gabriel.jpg-2e3c82bf3fe2c2b046be80bfdfaab45a.ctex"]
 
 [params]
 

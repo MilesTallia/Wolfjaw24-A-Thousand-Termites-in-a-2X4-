@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj47xutamjj34"
-path="res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"
+uid="uid://ctb5olyw4nsms"
+path="res://.godot/imported/Andrew.jpeg-c8d5b7e6e4e0f0269bcbaddd6c59b8e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Unlit_Candles.png"
-dest_files=["res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"]
+source_file="res://art/Headshots/Andrew.jpeg"
+dest_files=["res://.godot/imported/Andrew.jpeg-c8d5b7e6e4e0f0269bcbaddd6c59b8e6.ctex"]
 
 [params]
 

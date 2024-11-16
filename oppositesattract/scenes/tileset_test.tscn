@@ -1,18 +1,35 @@
-[gd_scene load_steps=9 format=4 uid="uid://dn16qaidvvde5"]
+[gd_scene load_steps=9 format=4 uid="uid://bd7joypk2ykf0"]
 
-[ext_resource type="PackedScene" uid="uid://cij2av326h5ko" path="res://scenes/ghost.tscn" id="1_wn17p"]
-[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human.tscn" id="2_h21bm"]
-[ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="3_l8gp6"]
-[ext_resource type="PackedScene" uid="uid://dxelhg66f3gk1" path="res://scenes/objects/Wooden_Wall.tscn" id="4_giw3b"]
-[ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="5_lcr2w"]
-[ext_resource type="PackedScene" uid="uid://c1t2fceptf7hl" path="res://scenes/objects/Metal_Wall.tscn" id="6_gl5q7"]
+[ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="1_5gmm6"]
+[ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost.tscn" id="2_pguk2"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human.tscn" id="3_ei10k"]
+[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="4_yh6yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xucd"]
-texture = ExtResource("3_l8gp6")
+texture = ExtResource("1_5gmm6")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_hnmx6"]
 sources/0 = SubResource("TileSetAtlasSource_2xucd")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oq278"]
+texture = ExtResource("4_yh6yh")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.125, 8, -4.25, 8, 2.9375, -8, 3.1875)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.125, 8, -3.8125, 8, 3.875, -8, 4.125)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_nfll5"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_oq278")
 
 [node name="GhostHumanTest" type="Node2D"]
 
@@ -23,74 +40,14 @@ tile_set = SubResource("TileSet_hnmx6")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="ghost" parent="." instance=ExtResource("1_wn17p")]
+[node name="ghost" parent="." instance=ExtResource("2_pguk2")]
 position = Vector2(-78, -32)
 
-[node name="Human" parent="." instance=ExtResource("2_h21bm")]
+[node name="Human" parent="." instance=ExtResource("3_ei10k")]
 position = Vector2(-17, -16)
 
-[node name="WoodenWall" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-136, 26)
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
 
-[node name="WoodenWall2" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-120, 26)
-
-[node name="WoodenWall3" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-104, 26)
-
-[node name="WoodenWall4" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-88, 26)
-
-[node name="WoodenWall5" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-72, 26)
-
-[node name="WoodenWall6" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-56, 26)
-
-[node name="WoodenWall7" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-40, 26)
-
-[node name="WoodenWall8" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(-24, 26)
-
-[node name="WoodenDoor" parent="." instance=ExtResource("5_lcr2w")]
-position = Vector2(-8, 27)
-
-[node name="WoodenWall9" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(8, 26)
-
-[node name="WoodenWall10" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(24, 26)
-
-[node name="WoodenWall11" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(40, 26)
-
-[node name="WoodenWall12" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(56, 26)
-
-[node name="WoodenWall13" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(72, 26)
-
-[node name="WoodenWall14" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(88, 26)
-
-[node name="WoodenWall15" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(104, 26)
-
-[node name="WoodenWall16" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(120, 26)
-
-[node name="WoodenWall17" parent="." instance=ExtResource("4_giw3b")]
-position = Vector2(136, 26)
-
-[node name="MetalWall" parent="." instance=ExtResource("6_gl5q7")]
-position = Vector2(-137, -55)
-
-[node name="MetalWall2" parent="." instance=ExtResource("6_gl5q7")]
-position = Vector2(-121, -55)
-
-[node name="MetalWall3" parent="." instance=ExtResource("6_gl5q7")]
-position = Vector2(-105, -55)
-
-[node name="MetalWall4" parent="." instance=ExtResource("6_gl5q7")]
-position = Vector2(-89, -55)
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6/wEAAAAAAAEAAAD7/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAD9/wEAAAAAAAEAAAD+/wEAAAAAAAIAAAD//wEAAAAAAAIAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAMAAAADAAEAAAAAAAMAAAAEAAEAAAAAAAMAAAAFAAEAAAAAAAQAAAAGAAEAAAAAAAQAAAAHAAEAAAAAAAQAAAD5/wEAAAAAAAUAAAD4/wEAAAAAAAUAAAA=")
+tile_set = SubResource("TileSet_nfll5")

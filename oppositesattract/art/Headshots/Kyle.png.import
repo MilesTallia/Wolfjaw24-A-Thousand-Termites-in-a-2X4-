@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj47xutamjj34"
-path="res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"
+uid="uid://brk3126jbsmdq"
+path="res://.godot/imported/Kyle.png-eccaed84df41a1c6fa61844e2455dd96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Unlit_Candles.png"
-dest_files=["res://.godot/imported/Unlit_Candles.png-0dd3a970d34649a9e58aafef9c6470e7.ctex"]
+source_file="res://art/Headshots/Kyle.png"
+dest_files=["res://.godot/imported/Kyle.png-eccaed84df41a1c6fa61844e2455dd96.ctex"]
 
 [params]
 
