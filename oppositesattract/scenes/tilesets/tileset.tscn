@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_areb7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfrp8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6l743"]
 texture = ExtResource("1_areb7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, 8, -2.9375, 8, 2.9375, -8, 3.1875)
@@ -19,7 +19,7 @@ texture = ExtResource("1_areb7")
 
 [sub_resource type="TileSet" id="TileSet_vf14f"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_sfrp8")
+sources/0 = SubResource("TileSetAtlasSource_6l743")
 
 [node name="Tileset" type="Node2D"]
 
