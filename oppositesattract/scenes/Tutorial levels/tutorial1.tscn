@@ -1,47 +1,24 @@
-[gd_scene load_steps=12 format=4 uid="uid://br8b7rgjaxflk"]
+[gd_scene load_steps=9 format=4 uid="uid://br8b7rgjaxflk"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_aq3d5"]
-[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_2t7pe"]
+[ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_3v8st"]
+[ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="3_mtlo4"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_obcm5"]
 [ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_jjrip"]
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="5_ss8ad"]
-[ext_resource type="PackedScene" path="res://scenes/objects/stairs.tscn" id="6_hsk8n"]
+[ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_hsk8n"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_v3t10"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okf5l"]
-texture = ExtResource("2_2t7pe")
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_0ehle"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_okf5l")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
-texture = ExtResource("2_2t7pe")
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_kyp5v"]
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 4
-sources/0 = SubResource("TileSetAtlasSource_hb16u")
 
 [node name="Tutorial 1" type="Node2D"]
 script = ExtResource("1_aq3d5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD4/wQAAAAAAAUAAAD3/wQAAAAAAAUAAAD3/wMAAAAAAAUAAAD3/wIAAAAAAAUAAAD3/wEAAAAAAAUAAAD3/wAAAAAAAAUAAAD3////AAAAAAUAAAD3//7/AAAAAAUAAAD3//3/AAAAAAUAAAD3//z/AAAAAAUAAAD3//v/AAAAAAUAAAD4//v/AAAAAAUAAAD5//v/AAAAAAUAAAD6//v/AAAAAAUAAAD7//v/AAAAAAUAAAD8//v/AAAAAAUAAAD9//v/AAAAAAUAAAD+//v/AAAAAAUAAAD///v/AAAAAAUAAAAAAPv/AAAAAAUAAAABAPv/AAAAAAUAAAACAPv/AAAAAAUAAAADAPv/AAAAAAUAAAAEAPv/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAIAPv/AAAAAAUAAAAIAPz/AAAAAAUAAAAIAP3/AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAIAAAAAAAAAAUAAAAIAAEAAAAAAAUAAAAIAAIAAAAAAAUAAAAIAAMAAAAAAAUAAAAIAAQAAAAAAAUAAAAHAAQAAAAAAAUAAAAEAAQAAAAAAAUAAAADAAQAAAAAAAUAAAACAAQAAAAAAAUAAAABAAQAAAAAAAUAAAAAAAQAAAAAAAUAAAD//wQAAAAAAAUAAAD+/wQAAAAAAAUAAAD9/wQAAAAAAAUAAAD8/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAAIAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAADAAUAAAAAAAUAAAACAAUAAAAAAAUAAAABAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAD//wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD3/wUAAAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2/wUAAAAAAAUAAAD2/wQAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wAAAAAAAAUAAAD2////AAAAAAUAAAD2//7/AAAAAAUAAAD2//3/AAAAAAUAAAD2//z/AAAAAAUAAAD2//v/AAAAAAUAAAD2//r/AAAAAAUAAAAJAPr/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAEAAAAAAAUAAAAJAAAAAAAAAAUAAAD8/wQAAAAAAAUAAAD7/wQAAAAAAAUAAAAHAAEAAAAAAAQAAAAGAAEAAAAAAAQAAAAFAAEAAAAAAAQAAAAEAAEAAAAAAAQAAAADAAEAAAAAAAQAAAACAAEAAAAAAAQAAAABAAEAAAAAAAQAAAD+/wEAAAAAAAQAAAD9/wEAAAAAAAQAAAD8/wEAAAAAAAQAAAD7/wEAAAAAAAQAAAD6/wEAAAAAAAQAAAD5/wEAAAAAAAQAAAD4/wEAAAAAAAQAAAA=")
-tile_set = SubResource("TileSet_0ehle")
+tile_set = ExtResource("2_3v8st")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAP7/AAAAAAEAAAACAP7/AAAAAAEAAAABAP7/AAAAAAEAAAAAAP7/AAAAAAEAAAD///7/AAAAAAEAAAD+//7/AAAAAAEAAAD9//7/AAAAAAEAAAD8//7/AAAAAAEAAAD7//7/AAAAAAEAAAD6//7/AAAAAAEAAAD5//7/AAAAAAEAAAD4//7/AAAAAAEAAAA=")
-tile_set = SubResource("TileSet_kyp5v")
+tile_set = ExtResource("3_mtlo4")
 
 [node name="both" type="Label" parent="."]
 offset_left = -127.0
@@ -72,7 +49,7 @@ text = "<- Exit down the stairs"
 
 [node name="Stairs" parent="." instance=ExtResource("6_hsk8n")]
 position = Vector2(-120, -56)
-next_room_path = "res://scenes/Tutorial levels/tutorial2.tscn"
+next_room_path = "res://scenes/Levels/level1.tscn"
 
 [node name="ghost" parent="." instance=ExtResource("3_obcm5")]
 position = Vector2(-95, 71)
