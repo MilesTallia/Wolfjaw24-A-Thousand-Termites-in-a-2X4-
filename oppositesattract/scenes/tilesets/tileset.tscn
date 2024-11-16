@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0lx5i50xxqv1"]
+
+[ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="1_areb7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfrp8"]
+texture = ExtResource("1_areb7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, 8, -2.9375, 8, 2.9375, -8, 3.1875)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.125, 8, -3.8125, 8, 3.875, -8, 4.125)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.125, 8, -3, 8, 2.8125, -8, 3.125)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -3.9375, 8, 4, -8, 4.125)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_vf14f"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_sfrp8")
+
+[node name="Tileset" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_vf14f")
