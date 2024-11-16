@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://pjo5o7f4s0k5"]
+
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/instructions_buttons.gd" id="1_kjt4r"]
+[ext_resource type="Texture2D" uid="uid://dyb1w84lj1mcq" path="res://art/temp_dirt_background.jpg" id="2_0ubfq"]
+[ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="2_oih1q"]
+[ext_resource type="PackedScene" uid="uid://cij2av326h5ko" path="res://scenes/ghost scenes/ghost.tscn" id="3_5p5mb"]
+[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_31jll"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kjt4r")
+
+[node name="background image" type="Sprite2D" parent="."]
+position = Vector2(574, 316)
+scale = Vector2(0.623535, 0.623535)
+texture = ExtResource("2_0ubfq")
+
+[node name="background darken" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 1239.0
+offset_bottom = 720.0
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 51.0
+offset_right = 211.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("2_oih1q")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="ghost" parent="." instance=ExtResource("3_5p5mb")]
+position = Vector2(802, 275)
+scale = Vector2(8, 8)
+
+[node name="Human" parent="." instance=ExtResource("4_31jll")]
+position = Vector2(350, 275)
+scale = Vector2(8, 8)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -309.0
+offset_top = -277.0
+offset_right = 345.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="human" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_oih1q")
+theme_override_font_sizes/font_size = 30
+text = "  W   -   up
+  A   -   left
+  S   -   down
+  D   -   right
+Q/E -  interact"
+
+[node name="ghost" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_oih1q")
+theme_override_font_sizes/font_size = 30
+text = "^   -   up
+<    -   left
+     -   down
+>    -   right"
+
+[node name="down arrow" type="Label" parent="."]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 481.0
+offset_right = 796.0
+offset_bottom = 518.0
+rotation = 3.14159
+theme_override_fonts/font = ExtResource("2_oih1q")
+theme_override_font_sizes/font_size = 30
+text = "^"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

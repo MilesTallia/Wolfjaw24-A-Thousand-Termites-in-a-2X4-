@@ -17,8 +17,8 @@ func _on_andrew_pressed() -> void:
 
 
 func _on_luke_pressed() -> void:
-	OS.shell_open("replaceme")
+	OS.shell_open("https://github.com/lhs3913")
 
 
 func _on_kyle_pressed() -> void:
-	OS.shell_open("replaceme")
+	OS.shell_open("https://www.linkedin.com/in/kyle-owen-42346b25b/")

@@ -4,8 +4,10 @@
 resource_name = "interactTest.gd"
 script/source = "extends Area2D
 
+
 @onready var ghost_timer_timer: Timer = $ghost_timer_timer
 @onready var ghost_timer: TextureProgressBar = $ghost_timer
+@onready var circuit_breaker: Node2D = $\"..\"
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -15,11 +17,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_ghost_timer_timer_timeout() -> void:
 	$ghost_timer.value += 1
-	if $ghost_timer.value >= 30:
+	if $ghost_timer.value >= 20:
+		ghost_timer_timer.stop()
 		ghost_timer.hide()
+		
 
 
 func _on_body_exited(body: Node2D) -> void:
+	ghost_timer_timer.stop()
 	$ghost_timer.value = 0
 	ghost_timer.hide()
 	

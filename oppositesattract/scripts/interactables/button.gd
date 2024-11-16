@@ -1,9 +1,7 @@
 extends Node2D
 
-@export var metal_door: Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
-
+@onready var metal_door: Node2D = $"../MetalDoor"
 
 var in_range = false
 

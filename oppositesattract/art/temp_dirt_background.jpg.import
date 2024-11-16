@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v77ypuixwjky"
-path="res://.godot/imported/Statue.png-d4e495d81271422911ecb2de18e93c5f.ctex"
+uid="uid://dyb1w84lj1mcq"
+path="res://.godot/imported/temp_dirt_background.jpg-f532de1294859e31ac0ba3f35c6aa30c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Statue.png"
-dest_files=["res://.godot/imported/Statue.png-d4e495d81271422911ecb2de18e93c5f.ctex"]
+source_file="res://art/temp_dirt_background.jpg"
+dest_files=["res://.godot/imported/temp_dirt_background.jpg-f532de1294859e31ac0ba3f35c6aa30c.ctex"]
 
 [params]
 
