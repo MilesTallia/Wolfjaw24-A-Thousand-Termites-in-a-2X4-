@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjgjku1f43gbv"]
+[gd_scene load_steps=9 format=3 uid="uid://bjgjku1f43gbv"]
 
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="1_fb030"]
+[ext_resource type="Texture2D" uid="uid://e2oje5rt0t4c" path="res://art/human_portait.png" id="2_ef3em"]
+[ext_resource type="Texture2D" uid="uid://dqor1b7si0i2b" path="res://art/ghost_portrait.png" id="3_ejtdv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1sg3"]
 bg_color = Color(0.07, 0.07, 0.07, 1)
@@ -28,10 +30,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This may be the answer ..."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../HumanPortait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ef3em")]
+}
 
 [sub_resource type="Animation" id="Animation_dw71o"]
 resource_name = "reveal_text"
-length = 4.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,10 +65,34 @@ tracks/0/path = NodePath(".:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.2, 3.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.2, 3.2, 5.1, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 1.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.03333, 5.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["This may be the answer ...", "I hope so too..."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../HumanPortait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.2, 5, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ef3em"), ExtResource("2_ef3em"), ExtResource("3_ejtdv")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6d88s"]
@@ -120,3 +170,8 @@ libraries = {
 "": SubResource("AnimationLibrary_6d88s")
 }
 autoplay = "reveal_text"
+
+[node name="HumanPortait" type="Sprite2D" parent="dialog_box/NinePatchRect"]
+position = Vector2(168, 46)
+scale = Vector2(20, 20)
+texture = ExtResource("2_ef3em")

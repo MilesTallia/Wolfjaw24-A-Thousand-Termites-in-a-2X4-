@@ -1,0 +1,131 @@
+[gd_scene load_steps=16 format=3 uid="uid://br8x3s2ev8t6t"]
+
+[ext_resource type="Texture2D" uid="uid://d4ioxvt1c84de" path="res://art/two_ghost_ending.png" id="1_a7tew"]
+[ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_jpi6v"]
+[ext_resource type="Script" path="res://scripts/simple_flip.gd" id="2_spg35"]
+[ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="3_jc0in"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjvm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_481mv"]
+atlas = ExtResource("2_jpi6v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er8q8"]
+atlas = ExtResource("2_jpi6v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwscn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_481mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er8q8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hilg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6akp"]
+atlas = ExtResource("2_jpi6v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y88q4"]
+atlas = ExtResource("2_jpi6v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yicj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6akp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y88q4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q3ebw"]
+resource_name = "reunite"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-41, 71), Vector2(-41, 50), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r1023"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-41, 71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vepk3"]
+_data = {
+"RESET": SubResource("Animation_r1023"),
+"reunite": SubResource("Animation_q3ebw")
+}
+
+[node name="HumanDiesEnding" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="TwoGhostEnding" type="Sprite2D" parent="."]
+texture = ExtResource("1_a7tew")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(25, 0)
+script = ExtResource("2_spg35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_wjvm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_xwscn")
+autoplay = "default"
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(-41, 71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("CircleShape2D_3hilg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+modulate = Color(0.705882, 1, 0.713726, 1)
+sprite_frames = SubResource("SpriteFrames_yicj7")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_vepk3")
+}
+autoplay = "reunite"
+
+[node name="GhostBlock" type="Sprite2D" parent="."]
+position = Vector2(-41, 71)
+texture = ExtResource("3_jc0in")
