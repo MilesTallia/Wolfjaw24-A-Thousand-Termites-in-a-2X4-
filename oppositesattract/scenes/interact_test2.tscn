@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://haik0aqtg4vh"]
+
+[ext_resource type="PackedScene" uid="uid://b7xisdtf8u5up" path="res://scenes/ghost_interact.tscn" id="1_4ihj1"]
+[ext_resource type="PackedScene" path="res://scenes/ghost.tscn" id="2_01y8j"]
+[ext_resource type="PackedScene" uid="uid://bugls4r5tr7u4" path="res://scenes/sign.tscn" id="3_w6sgs"]
+
+[node name="InteractTest2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="ghost_interact" parent="." instance=ExtResource("1_4ihj1")]
+
+[node name="ghost" parent="." instance=ExtResource("2_01y8j")]
+position = Vector2(-55, 0)
+collision_mask = 8
+
+[node name="sign" parent="." instance=ExtResource("3_w6sgs")]
+position = Vector2(-77, 30)

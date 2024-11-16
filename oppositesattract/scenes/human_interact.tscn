@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://na4d55dmxxi"]
+
+[ext_resource type="Script" path="res://scripts/human_interact.gd" id="1_r48hc"]
+[ext_resource type="Texture2D" uid="uid://dadlenr81o30j" path="res://art/E-interact.png" id="2_w38hs"]
+[ext_resource type="Texture2D" uid="uid://cnkdhtrvhnggy" path="res://art/Q-interact.png" id="3_btjfu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6yfko"]
+radius = 17.0
+
+[node name="button_prompt" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_r48hc")
+
+[node name="E" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-9, -9)
+texture = ExtResource("2_w38hs")
+
+[node name="Q" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(9, -9)
+texture = ExtResource("3_btjfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6yfko")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

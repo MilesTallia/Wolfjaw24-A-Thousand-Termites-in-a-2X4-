@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7xisdtf8u5up"]
+
+[ext_resource type="PackedScene" uid="uid://dnaeni1w5ketb" path="res://scenes/interact_test.tscn" id="1_2mk7k"]
+[ext_resource type="PackedScene" uid="uid://dlmj1wx8m76wd" path="res://scenes/ghost_timer.tscn" id="2_ad2th"]
+[ext_resource type="Script" path="res://scripts/ghost_timer.gd" id="3_bjg70"]
+[ext_resource type="Texture2D" uid="uid://djqhux3bfirhh" path="res://art/Ghost_Interact0.png" id="3_isfou"]
+[ext_resource type="Texture2D" uid="uid://cv74qjtukosd3" path="res://art/Ghost_Interact3.png" id="4_8frcg"]
+
+[sub_resource type="GDScript" id="GDScript_m55q5"]
+resource_name = "ghost_timer_timer.gd"
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5bny7"]
+radius = 13.0
+
+[sub_resource type="GDScript" id="GDScript_dtlj8"]
+resource_name = "ghost_timer_hit.gd"
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="ghost_interact" type="Node"]
+
+[node name="interact_test" parent="." instance=ExtResource("1_2mk7k")]
+position = Vector2(0, -14)
+
+[node name="ghost_timer" parent="interact_test" instance=ExtResource("2_ad2th")]
+visible = false
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
+max_value = 20.0
+texture_under = ExtResource("3_isfou")
+texture_progress = ExtResource("4_8frcg")
+tint_over = Color(0.467114, 0.502973, 0.538344, 1)
+tint_progress = Color(0.221178, 0.205954, 0.236821, 1)
+script = ExtResource("3_bjg70")
+
+[node name="ghost_timer_timer" type="Timer" parent="interact_test"]
+wait_time = 0.1
+script = SubResource("GDScript_m55q5")
+
+[node name="ghost_timer_hit" type="CollisionShape2D" parent="interact_test"]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_5bny7")
+script = SubResource("GDScript_dtlj8")
+
+[connection signal="body_exited" from="interact_test" to="interact_test" method="_on_body_exited"]
+[connection signal="timeout" from="interact_test/ghost_timer_timer" to="interact_test" method="_on_ghost_timer_timer_timeout"]
