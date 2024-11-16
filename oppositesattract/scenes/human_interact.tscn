@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6yfko"]
 radius = 17.0
 
-[node name="Area2D" type="Area2D"]
+[node name="button_prompt" type="Area2D"]
 collision_mask = 4
 script = ExtResource("1_r48hc")
 
