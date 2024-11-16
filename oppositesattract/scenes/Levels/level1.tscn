@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_rap0j"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_gfan8"]
-[ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="3_lcmh4"]
+[ext_resource type="PackedScene" path="res://scenes/Title_Screen/pause_menu.tscn" id="3_lcmh4"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="4_56k4f"]
-[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
+[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_kw3pu"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_1ihs7"]
 
@@ -24,8 +24,11 @@ sources/0 = SubResource("TileSetAtlasSource_okf5l")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
 texture = ExtResource("2_gfan8")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.8125, 8, -2.875, 8, 2.875, -8, 3.0625)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9375, 8, -4.0625, 8, 3.875, -8, 4.0625)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_kyp5v"]
 physics_layer_0/collision_layer = 4

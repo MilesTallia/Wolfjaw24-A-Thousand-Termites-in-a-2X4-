@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="1_tqasu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfxst"]
-radius = 7.0
-height = 16.0
+radius = 5.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en3lg"]
 atlas = ExtResource("1_tqasu")
