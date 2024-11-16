@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://br8x3s2ev8t6t"]
+[gd_scene load_steps=17 format=3 uid="uid://br8x3s2ev8t6t"]
 
 [ext_resource type="Texture2D" uid="uid://d4ioxvt1c84de" path="res://art/two_ghost_ending.png" id="1_a7tew"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_jpi6v"]
 [ext_resource type="Script" path="res://scripts/simple_flip.gd" id="2_spg35"]
 [ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="3_jc0in"]
+[ext_resource type="PackedScene" uid="uid://cnqvfmkmlnqhv" path="res://scenes/Ending Cutscenes/esc_to_continue.tscn" id="5_47e57"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wjvm4"]
 
@@ -129,3 +130,13 @@ autoplay = "reunite"
 [node name="GhostBlock" type="Sprite2D" parent="."]
 position = Vector2(-41, 71)
 texture = ExtResource("3_jc0in")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+
+[node name="END ESC" parent="Control" instance=ExtResource("5_47e57")]
+layout_mode = 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwhlo5iq11xgo"]
+[gd_scene load_steps=18 format=3 uid="uid://cwhlo5iq11xgo"]
 
 [ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_3x3gb"]
 [ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_oyeww"]
 [ext_resource type="Script" path="res://scripts/simple_flip.gd" id="3_b6cub"]
 [ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_mepge"]
 [ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="4_j7771"]
+[ext_resource type="PackedScene" uid="uid://cnqvfmkmlnqhv" path="res://scenes/Ending Cutscenes/esc_to_continue.tscn" id="6_aeirt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tk6o8"]
 
@@ -159,3 +160,13 @@ autoplay = "default"
 [node name="GhostBlock" type="Sprite2D" parent="."]
 position = Vector2(6, 26)
 texture = ExtResource("4_j7771")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+
+[node name="END ESC" parent="Control" instance=ExtResource("6_aeirt")]
+layout_mode = 1
