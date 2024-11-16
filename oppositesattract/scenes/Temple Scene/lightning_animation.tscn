@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://djqvwofwavhrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34721"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_b2ywx"]
+resource_name = "lightning_flash"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.23333, 1.4, 1.46667, 1.53333, 1.6, 1.83333, 3.03333, 3.26667, 3.36667, 3.46667, 3.63333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.054902), Color(1, 1, 1, 0), Color(1, 1, 1, 0.788235), Color(1, 1, 1, 0), Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.0627451), Color(1, 1, 1, 0.513726), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_56uql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pfvgm"]
+_data = {
+"RESET": SubResource("Animation_56uql"),
+"lightning_flash": SubResource("Animation_b2ywx")
+}
+
+[node name="Lightning Animation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lightning" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Lightning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Lightning/NinePatchRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_34721")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lightning/NinePatchRect/Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_pfvgm")
+}
+autoplay = "lightning_flash"
