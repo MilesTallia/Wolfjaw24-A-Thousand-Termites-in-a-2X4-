@@ -20,7 +20,7 @@ offset_right = 433.0
 offset_bottom = 384.0
 theme_override_fonts/font = ExtResource("1_7xxan")
 theme_override_font_sizes/font_size = 30
-text = "start new game"
+text = "Start New Game"
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
@@ -42,5 +42,27 @@ theme_override_fonts/font = ExtResource("1_7xxan")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 
+[node name="Instructions" type="Button" parent="."]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 529.0
+offset_right = 845.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("1_7xxan")
+theme_override_font_sizes/font_size = 30
+text = "Instructions"
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 406.0
+offset_right = 255.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("1_7xxan")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]

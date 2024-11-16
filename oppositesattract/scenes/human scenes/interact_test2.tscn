@@ -1,20 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://haik0aqtg4vh"]
+[gd_scene load_steps=5 format=3 uid="uid://haik0aqtg4vh"]
 
-[ext_resource type="Script" path="res://scripts/interactables/circuit_breaker.gd" id="1_scey2"]
-[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/circuit_breaker.tscn" id="1_wsr5o"]
-[ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="2_01y8j"]
+[ext_resource type="PackedScene" uid="uid://b7xisdtf8u5up" path="res://scenes/ghost_interact.tscn" id="1_4ihj1"]
+[ext_resource type="PackedScene" uid="uid://wfug4v1f1j5d" path="res://scenes/ghost_move_object.tscn" id="1_snvcw"]
+[ext_resource type="PackedScene" uid="uid://cij2av326h5ko" path="res://scenes/ghost.tscn" id="2_01y8j"]
 [ext_resource type="PackedScene" uid="uid://bugls4r5tr7u4" path="res://scenes/sign.tscn" id="3_w6sgs"]
-[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="5_w63yg"]
 
 [node name="InteractTest2" type="Node2D"]
-script = ExtResource("1_scey2")
+
+[node name="ghost_move_object" parent="." groups=["pushable"] instance=ExtResource("1_snvcw")]
+position = Vector2(-97, -19)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="ghost" parent="." instance=ExtResource("2_01y8j")]
 position = Vector2(-55, 0)
-collision_mask = 8
 
 [node name="sign" parent="." instance=ExtResource("3_w6sgs")]
 position = Vector2(-77, 30)

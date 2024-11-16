@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp8fhgwbm3qdq"]
+[gd_scene load_steps=9 format=3 uid="uid://dp8fhgwbm3qdq"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/credits_buttons.gd" id="1_ffs3y"]
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="1_rbp8d"]
+[ext_resource type="Texture2D" uid="uid://dyb1w84lj1mcq" path="res://art/temp_dirt_background.jpg" id="2_6y115"]
 [ext_resource type="Texture2D" uid="uid://wvetycemseon" path="res://art/Headshots/Miles.jpg" id="3_sp4k2"]
 [ext_resource type="Texture2D" uid="uid://udyhy3tgl5ei" path="res://art/Headshots/Gabriel.jpg" id="4_tvnex"]
 [ext_resource type="Texture2D" uid="uid://ctb5olyw4nsms" path="res://art/Headshots/Andrew.jpeg" id="5_b8f00"]
@@ -16,6 +17,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ffs3y")
+
+[node name="background image" type="Sprite2D" parent="."]
+position = Vector2(574, 316)
+scale = Vector2(0.623535, 0.623535)
+texture = ExtResource("2_6y115")
+
+[node name="background darken" type="Panel" parent="."]
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 1239.0
+offset_bottom = 720.0
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0

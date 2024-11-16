@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxah5iwyjrka4"]
+[gd_scene load_steps=9 format=3 uid="uid://bhfhx1jka88r6"]
 
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_2gq0c"]
 [ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="1_pe3ls"]
@@ -46,11 +46,13 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6o1f3"]
 radius = 3.0
-height = 16.0
+height = 14.0
 
 [node name="Human" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_2gq0c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
