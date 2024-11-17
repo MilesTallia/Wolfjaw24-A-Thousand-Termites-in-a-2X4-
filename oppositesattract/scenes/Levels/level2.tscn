@@ -105,7 +105,7 @@ door_array = [NodePath("../MetalDoor2")]
 [node name="Stairs" parent="." instance=ExtResource("9_qrp4d")]
 position = Vector2(120, 0)
 rotation = 1.5708
-next_room_path = "res://scenes/res://scenes/Levels/level3.tscnLevels/level3.tscn"
+next_room_path = "res://scenes/Levels/level3.tscn"
 
 [node name="exit_anim" parent="Stairs" index="0"]
 offset_left = -27.0

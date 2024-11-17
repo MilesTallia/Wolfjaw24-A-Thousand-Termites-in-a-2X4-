@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="1_o56af"]
 [ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="2_wj1bf"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_is761"]
-[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_i5ls3"]
+[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_i5ls3"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_waxef"]
 [ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="6_03yxm"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="7_l2jdx"]
