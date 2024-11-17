@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dqj6b8c8y70h8"]
+[gd_scene load_steps=12 format=4 uid="uid://dqj6b8c8y70h8"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_nk51m"]
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_d1mb5"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_dnmye"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_r6pvt"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="7_b3m8c"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="10_gcbup"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="11_n6qjk"]
 
 [node name="Tutorial2" type="Node2D"]
 script = ExtResource("1_nk51m")
@@ -49,10 +51,10 @@ position = Vector2(0, -56)
 next_room_path = "res://scenes/Title_Screen/title_screen.tscn"
 
 [node name="ghost" parent="." instance=ExtResource("4_xjbb1")]
-position = Vector2(-95, 71)
+position = Vector2(96, 73)
 
 [node name="Human" parent="." instance=ExtResource("5_xvymj")]
-position = Vector2(97, 71)
+position = Vector2(-96, 72)
 
 [node name="MetalDoor" parent="." instance=ExtResource("7_b3m8c")]
 position = Vector2(-88, -24)
@@ -60,8 +62,28 @@ position = Vector2(-88, -24)
 [node name="MetalDoor2" parent="." instance=ExtResource("7_b3m8c")]
 position = Vector2(88, -24)
 
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("10_gcbup")]
+position = Vector2(-106, -11)
+door_array = [NodePath("../MetalDoor")]
+
+[node name="AnimatedSprite2D" parent="lever" index="1"]
+position = Vector2(2, -6)
+rotation = -1.5708
+
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("11_n6qjk")]
+position = Vector2(104, -12)
+rotation = 1.5708
+door_array = [NodePath("../MetalDoor2")]
+
+[node name="interact_test" parent="circuit_breaker" index="1"]
+position = Vector2(-14, 9.53674e-07)
+rotation = -1.5708
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("6_r6pvt")]
 visible = false
+
+[editable path="lever"]
+[editable path="circuit_breaker"]

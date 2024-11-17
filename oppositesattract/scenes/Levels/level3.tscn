@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c67h8lmvwanbm"]
+[gd_scene load_steps=12 format=4 uid="uid://c67h8lmvwanbm"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_arvpq"]
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_r2twf"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="5_tti7g"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_iujrk"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_b0wji"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="9_p62m7"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="10_m6ei4"]
+[ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="11_8omvs"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_arvpq")
@@ -41,8 +44,42 @@ position = Vector2(104, 24)
 [node name="WoodenDoor3" parent="." instance=ExtResource("7_b0wji")]
 position = Vector2(8, -24)
 
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_p62m7")]
+position = Vector2(-120, 0)
+door_array = [NodePath("../WoodenDoor")]
+
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("10_m6ei4")]
+position = Vector2(-79, 0)
+door_array = [NodePath("../MetalDoor")]
+
+[node name="circuit_breaker2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_p62m7")]
+position = Vector2(84, 48)
+door_array = [NodePath("../WoodenDoor2")]
+
+[node name="lever2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("10_m6ei4")]
+position = Vector2(125, 48)
+door_array = [NodePath("../MetalDoor2")]
+
+[node name="circuit_breaker3" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_p62m7")]
+position = Vector2(-120, 48)
+door_array = [NodePath("../WoodenDoor3")]
+
+[node name="Stairs" parent="." instance=ExtResource("11_8omvs")]
+position = Vector2(0, 28)
+rotation = 3.14159
+next_room_path = "res://scenes/Levels/level4.tscn"
+
+[node name="exit_anim" parent="Stairs" index="0"]
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 45.0
+offset_bottom = 80.0
+rotation = 3.14159
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("6_iujrk")]
 visible = false
+
+[editable path="Stairs"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://qrf51iqrevbt"]
+
+[ext_resource type="Script" path="res://scripts/interactables/circuit_breaker.gd" id="1_ca6hn"]
+[ext_resource type="Texture2D" uid="uid://bt783yjordxyx" path="res://art/Circuit_Breaker.png" id="2_ulbte"]
+[ext_resource type="PackedScene" uid="uid://dnaeni1w5ketb" path="res://scenes/human scenes/interact_test.tscn" id="3_f7boc"]
+[ext_resource type="PackedScene" uid="uid://cwnfbboqr4awi" path="res://scenes/ghost scenes/ghost_timer.tscn" id="4_7seon"]
+[ext_resource type="Texture2D" uid="uid://djqhux3bfirhh" path="res://art/Ghost_Interact0.png" id="5_sxldb"]
+[ext_resource type="Texture2D" uid="uid://cv74qjtukosd3" path="res://art/Ghost_Interact3.png" id="6_3ye76"]
+[ext_resource type="Script" path="res://scripts/ghost_timer.gd" id="7_8yh0k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmf4r"]
+atlas = ExtResource("2_ulbte")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivd8y"]
+atlas = ExtResource("2_ulbte")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvswj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmf4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivd8y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_0i0xj"]
+resource_name = "ghost_timer_timer.gd"
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imon0"]
+radius = 13.0
+
+[sub_resource type="GDScript" id="GDScript_lk333"]
+resource_name = "ghost_timer_hit.gd"
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="circuit_breaker" type="Node2D" node_paths=PackedStringArray("door_array")]
+position = Vector2(62, -8)
+script = ExtResource("1_ca6hn")
+door_array = [null, null]
+
+[node name="circuit_breaker_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fvswj")
+
+[node name="interact_test" parent="." instance=ExtResource("3_f7boc")]
+position = Vector2(0, -14)
+
+[node name="ghost_timer" parent="interact_test" instance=ExtResource("4_7seon")]
+visible = false
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
+max_value = 20.0
+texture_under = ExtResource("5_sxldb")
+texture_progress = ExtResource("6_3ye76")
+tint_over = Color(0.467114, 0.502973, 0.538344, 1)
+tint_progress = Color(0.221178, 0.205954, 0.236821, 1)
+script = ExtResource("7_8yh0k")
+
+[node name="ghost_timer_timer" type="Timer" parent="interact_test"]
+wait_time = 0.1
+script = SubResource("GDScript_0i0xj")
+
+[node name="ghost_timer_hit" type="CollisionShape2D" parent="interact_test"]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_imon0")
+script = SubResource("GDScript_lk333")
+
+[connection signal="body_exited" from="interact_test" to="interact_test" method="_on_body_exited"]
+[connection signal="timeout" from="interact_test/ghost_timer_timer" to="interact_test" method="_on_ghost_timer_timer_timeout"]

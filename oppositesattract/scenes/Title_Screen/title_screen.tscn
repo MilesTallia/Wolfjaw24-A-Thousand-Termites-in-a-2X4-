@@ -227,7 +227,7 @@ grow_vertical = 2
 script = ExtResource("2_dpmg7")
 
 [node name="TitleScreenBackdrop" type="Sprite2D" parent="."]
-position = Vector2(578, 324)
+position = Vector2(576, 324)
 texture = ExtResource("2_48bkw")
 
 [node name="Start New Game" type="Button" parent="."]

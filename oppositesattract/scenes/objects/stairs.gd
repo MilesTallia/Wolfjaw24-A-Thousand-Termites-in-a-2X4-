@@ -7,7 +7,6 @@ extends Node2D
 var num_players: int = 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(num_players)
 	if body.is_in_group("players"):
 		num_players += 1
 		if num_players == 2:

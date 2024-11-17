@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=4 uid="uid://dl2xhrpinpsg1"]
+
+[ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="1_o56af"]
+[ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="2_wj1bf"]
+[ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_is761"]
+[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_i5ls3"]
+[ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_waxef"]
+[ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="6_03yxm"]
+[ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="7_l2jdx"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="8_hp8tj"]
+[ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="9_ig4jk"]
+[ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="10_re2a8"]
+[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="11_oucfo"]
+
+[node name="Level8" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4/wQAAAAAAAUAAAD3/wQAAAAAAAUAAAD3/wMAAAAAAAUAAAD3/wIAAAAAAAUAAAD3/wEAAAAAAAUAAAD3/wAAAAAAAAUAAAD3////AAAAAAUAAAD3//7/AAAAAAUAAAD3//3/AAAAAAUAAAD3//z/AAAAAAUAAAD3//v/AAAAAAUAAAD4//v/AAAAAAUAAAD5//v/AAAAAAUAAAD6//v/AAAAAAUAAAD7//v/AAAAAAUAAAD8//v/AAAAAAUAAAD9//v/AAAAAAUAAAD+//v/AAAAAAUAAAD///v/AAAAAAUAAAAAAPv/AAAAAAUAAAABAPv/AAAAAAUAAAACAPv/AAAAAAUAAAADAPv/AAAAAAUAAAAEAPv/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAIAPv/AAAAAAUAAAAIAPz/AAAAAAUAAAAIAP3/AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAIAAAAAAAAAAUAAAAIAAEAAAAAAAUAAAAIAAIAAAAAAAUAAAAIAAMAAAAAAAUAAAAIAAQAAAAAAAUAAAAHAAQAAAAAAAUAAAAEAAQAAAAAAAUAAAADAAQAAAAAAAUAAAACAAQAAAAAAAUAAAABAAQAAAAAAAUAAAAAAAQAAAAAAAUAAAD//wQAAAAAAAUAAAD+/wQAAAAAAAUAAAD9/wQAAAAAAAUAAAD8/wUAAAAAAAUAAAD7/wUAAAAAAAUAAAD6/wUAAAAAAAUAAAD5/wUAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wUAAAAAAAUAAAAIAAUAAAAAAAUAAAAHAAUAAAAAAAUAAAAGAAUAAAAAAAUAAAAFAAUAAAAAAAUAAAAEAAUAAAAAAAUAAAADAAUAAAAAAAUAAAACAAUAAAAAAAUAAAABAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAD//wUAAAAAAAUAAAD+/wUAAAAAAAUAAAD3/wUAAAAAAAUAAAAIAPr/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAFAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAADAPr/AAAAAAUAAAACAPr/AAAAAAUAAAABAPr/AAAAAAUAAAAAAPr/AAAAAAUAAAD///r/AAAAAAUAAAD+//r/AAAAAAUAAAD9//r/AAAAAAUAAAD8//r/AAAAAAUAAAD7//r/AAAAAAUAAAD6//r/AAAAAAUAAAD5//r/AAAAAAUAAAD4//r/AAAAAAUAAAD3//r/AAAAAAUAAAD2/wUAAAAAAAUAAAD2/wQAAAAAAAUAAAD2/wMAAAAAAAUAAAD2/wIAAAAAAAUAAAD2/wEAAAAAAAUAAAD2/wAAAAAAAAUAAAD2////AAAAAAUAAAD2//7/AAAAAAUAAAD2//3/AAAAAAUAAAD2//z/AAAAAAUAAAD2//v/AAAAAAUAAAD2//r/AAAAAAUAAAAJAPr/AAAAAAUAAAAJAPv/AAAAAAUAAAAJAPz/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAEAAAAAAAUAAAAJAAAAAAAAAAUAAAD8/wQAAAAAAAUAAAD7/wQAAAAAAAUAAAAFAAQAAAAAAAUAAAAGAAQAAAAAAAUAAAD5/wQAAAAAAAUAAAD6/wQAAAAAAAUAAAD6/wAAAAAAAAQAAAD7/wAAAAAAAAQAAAD8/wAAAAAAAAUAAAD9/wAAAAAAAAQAAAD//wAAAAAAAAQAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAQAAAACAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAEAAAAAAAUAAAADAAMAAAAAAAUAAAAEAAAAAAAAAAUAAAAFAAAAAAAAAAUAAAAGAAAAAAAAAAUAAAAHAAAAAAAAAAUAAAAGAP3/AAAAAAUAAAAHAP3/AAAAAAUAAAA=")
+tile_set = ExtResource("1_o56af")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5/wMAAAAAAAEAAGD5/wEAAAAAAAEAAFD5/wAAAAAAAAIAAAD5////AAAAAAEAAFD5//7/AAAAAAEAAFD5//3/AAAAAAIAAAD6//3/AAAAAAEAAAD7//3/AAAAAAEAAAD8//3/AAAAAAIAAAD9//3/AAAAAAEAAAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAACAP3/AAAAAAEAAAADAP3/AAAAAAEAAAAEAP3/AAAAAAEAAAAFAP3/AAAAAAEAAAA=")
+tile_set = ExtResource("2_wj1bf")
+
+[node name="ghost" parent="." instance=ExtResource("3_is761")]
+position = Vector2(29, 53)
+
+[node name="Human" parent="." instance=ExtResource("4_i5ls3")]
+position = Vector2(-30, 52)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_waxef")]
+visible = false
+
+[node name="Box" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(95, 24)
+
+[node name="Box2" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(95, 40)
+
+[node name="Box3" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(95, 56)
+
+[node name="Box4" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(56, -27)
+
+[node name="Box5" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(56, -10)
+
+[node name="Stairs" parent="." instance=ExtResource("7_l2jdx")]
+position = Vector2(120, -23)
+next_room_path = "/Users/kyleowen/Wolfjam/Wolfjaw24-A-Thousand-Termites-in-a-2X4-/oppositesattract/scenes/Levels/level_last.tscn"
+
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_hp8tj")]
+position = Vector2(34, -63)
+door_array = [NodePath("../MetalDoor4")]
+
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_ig4jk")]
+position = Vector2(74, -63)
+door_array = [NodePath("../MetalDoor")]
+
+[node name="Box6" parent="." instance=ExtResource("6_03yxm")]
+position = Vector2(7, -55)
+
+[node name="WoodenDoor" parent="." instance=ExtResource("10_re2a8")]
+position = Vector2(-105, 40)
+rotation = 1.5708
+
+[node name="MetalDoor" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(-24, 8)
+
+[node name="MetalDoor2" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(-56, -8)
+rotation = 1.5708
+
+[node name="MetalDoor3" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(-56, -24)
+rotation = 1.5708
+
+[node name="MetalDoor4" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(56, 40)
+rotation = 1.5708
+
+[node name="MetalDoor5" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(104, -24)
+rotation = 1.5708
+
+[node name="MetalDoor6" parent="." instance=ExtResource("11_oucfo")]
+position = Vector2(104, -8)
+rotation = 1.5708
+
+[node name="lever2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_ig4jk")]
+position = Vector2(128, 40)
+door_array = [NodePath("../WoodenDoor")]
+
+[node name="lever3" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_ig4jk")]
+position = Vector2(84, -3)
+door_array = [NodePath("../MetalDoor3"), NodePath("../MetalDoor2")]
+
+[node name="lever4" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_ig4jk")]
+position = Vector2(-84, -15)
+door_array = [NodePath("../MetalDoor6"), NodePath("../MetalDoor5")]

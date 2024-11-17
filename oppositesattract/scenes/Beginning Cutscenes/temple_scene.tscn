@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bggy71xgjhgjh"]
+[gd_scene load_steps=19 format=3 uid="uid://bggy71xgjhgjh"]
 
 [ext_resource type="PackedScene" uid="uid://bjgjku1f43gbv" path="res://scenes/Beginning Cutscenes/Textbox.tscn" id="1_2pdjc"]
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/enter_to_continue.gd" id="1_jeeso"]
 [ext_resource type="PackedScene" uid="uid://djqvwofwavhrg" path="res://scenes/Beginning Cutscenes/lightning_animation.tscn" id="2_4ye2x"]
 [ext_resource type="PackedScene" uid="uid://cer6fqnxl4jov" path="res://scenes/Beginning Cutscenes/enter_to_continue.tscn" id="3_hmc8y"]
 [ext_resource type="Texture2D" uid="uid://dsvxe0sxcmwla" path="res://art/crypt.png" id="4_qxt2t"]
@@ -165,6 +166,8 @@ animations = [{
 }]
 
 [node name="TempleScene" type="Node2D"]
+script = ExtResource("1_jeeso")
+next_room_path = "res://scenes/Levels/level1.tscn"
 
 [node name="Crypt" type="Sprite2D" parent="."]
 texture = ExtResource("4_qxt2t")
@@ -185,9 +188,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wndbj")
 }
 autoplay = "enter crypt"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(-20, 100)
@@ -235,3 +235,6 @@ offset_bottom = 640.0
 
 [node name="Textbox2" parent="Control2/Control" instance=ExtResource("3_hmc8y")]
 layout_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ca23l6e5ptsoj"]
+[gd_scene load_steps=14 format=4 uid="uid://ca23l6e5ptsoj"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_rap0j"]
 [ext_resource type="Texture2D" uid="uid://bks4vi7hk3haw" path="res://art/Walls_And_Doors.png" id="2_gfan8"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_kw3pu"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_1ihs7"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="8_w003g"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="10_kducl"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="11_65ku7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
 texture = ExtResource("2_gfan8")
@@ -36,10 +38,10 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAE
 tile_set = SubResource("TileSet_kyp5v")
 
 [node name="ghost" parent="." instance=ExtResource("4_56k4f")]
-position = Vector2(-89, 71)
+position = Vector2(-69, 71)
 
 [node name="Human" parent="." instance=ExtResource("5_m5sbg")]
-position = Vector2(-64, 71)
+position = Vector2(-91, 71)
 
 [node name="MetalDoor" parent="." instance=ExtResource("6_kw3pu")]
 position = Vector2(72, 9)
@@ -49,14 +51,34 @@ position = Vector2(-8, 8)
 
 [node name="WoodenDoor" parent="." instance=ExtResource("7_1ihs7")]
 position = Vector2(-88, 8)
-rotation = 3.14159
 
 [node name="Stairs" parent="." instance=ExtResource("8_w003g")]
 position = Vector2(120, -56)
 next_room_path = "res://scenes/Levels/level2.tscn"
+
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("11_65ku7")]
+position = Vector2(-31, -8)
+door_array = [NodePath("../MetalDoor2")]
+
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("10_kducl")]
+position = Vector2(-104, -4)
+rotation = -1.5708
+door_array = [NodePath("../WoodenDoor")]
+
+[node name="interact_test" parent="circuit_breaker" index="1"]
+position = Vector2(14, 9.53674e-07)
+rotation = 1.5708
+
+[node name="circuit_breaker2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("10_kducl")]
+position = Vector2(44, -8)
+scale = Vector2(-1, 1)
+door_array = [NodePath("../MetalDoor")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("3_lcmh4")]
 visible = false
+
+[editable path="lever"]
+[editable path="circuit_breaker"]

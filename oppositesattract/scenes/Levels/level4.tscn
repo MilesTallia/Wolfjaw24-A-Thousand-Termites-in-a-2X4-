@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://tmkgfy4md0fr"]
+[gd_scene load_steps=11 format=4 uid="uid://tmkgfy4md0fr"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_hm84m"]
-[ext_resource type="TileSet" uid="uid://cdxejn31i51ac" path="res://scenes/Levels/stone_set.tres" id="2_v77ux"]
+[ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_v77ux"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_jmjyy"]
-[ext_resource type="TileSet" uid="uid://kxgqk1ar5n5a" path="res://scenes/Levels/wood_set.tres" id="3_roq6s"]
-[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_api0f"]
-[ext_resource type="PackedScene" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_koaac"]
+[ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="3_roq6s"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_api0f"]
+[ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_koaac"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_ow3xq"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="8_nr3uq"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="9_u6pu7"]
+[ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="10_ofa2u"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_hm84m")
@@ -25,12 +28,6 @@ position = Vector2(-104, 71)
 [node name="Human" parent="." instance=ExtResource("4_api0f")]
 position = Vector2(105, 72)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_koaac")]
-visible = false
-
 [node name="MetalDoor" parent="." instance=ExtResource("6_ow3xq")]
 position = Vector2(-104, 40)
 
@@ -47,3 +44,35 @@ rotation = 1.5708
 
 [node name="MetalDoor5" parent="." instance=ExtResource("6_ow3xq")]
 position = Vector2(-104, -24)
+
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_nr3uq")]
+position = Vector2(120, 24)
+scale = Vector2(-1, 1)
+door_array = [NodePath("../MetalDoor")]
+
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_u6pu7")]
+position = Vector2(-125, 24)
+scale = Vector2(-1, 1)
+door_array = [NodePath("../MetalDoor2")]
+
+[node name="circuit_breaker2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_nr3uq")]
+position = Vector2(-120, -8)
+door_array = [NodePath("../MetalDoor3")]
+
+[node name="lever2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_u6pu7")]
+position = Vector2(125, -8)
+door_array = [NodePath("../MetalDoor4")]
+
+[node name="circuit_breaker3" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_nr3uq")]
+position = Vector2(-120, -40)
+door_array = [NodePath("../MetalDoor5")]
+
+[node name="Stairs" parent="." instance=ExtResource("10_ofa2u")]
+position = Vector2(0, -56)
+next_room_path = "res://scenes/Levels/stage2/level5.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_koaac")]
+visible = false

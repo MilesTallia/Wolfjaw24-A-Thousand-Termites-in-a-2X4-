@@ -63,8 +63,10 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="circuit_breaker" type="Node2D"]
+[node name="circuit_breaker" type="Node2D" node_paths=PackedStringArray("door_array")]
+position = Vector2(62, -8)
 script = ExtResource("1_ca6hn")
+door_array = [null, null]
 
 [node name="circuit_breaker_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fvswj")
