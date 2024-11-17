@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c30ad8mphnhv4"]
+[gd_scene load_steps=5 format=3 uid="uid://dj0ffifn2je22"]
 
 [ext_resource type="Script" path="res://scenes/audio.gd" id="1_lyrb0"]
 [ext_resource type="AudioStream" uid="uid://d05nfij4i3ho7" path="res://sound/Trick or Treat  (Halloween  Autumn Lofi No Copyright Playlist).mp3" id="2_j02w1"]
