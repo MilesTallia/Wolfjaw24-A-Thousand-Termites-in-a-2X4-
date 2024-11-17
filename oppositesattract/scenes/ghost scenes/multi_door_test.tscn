@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="1_7rkr6"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="2_8t65d"]
-[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/circuit_breaker.tscn" id="3_dp7d0"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="3_dp7d0"]
 [ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_3ijvi"]
-[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/lever.tscn" id="5_ypclv"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="5_ypclv"]
 
 [node name="MultiDoorTest" type="Node2D"]
 
@@ -18,7 +18,6 @@ position = Vector2(66, 28)
 position = Vector2(100, 28)
 
 [node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("3_dp7d0")]
-position = Vector2(62, -8)
 door_array = [NodePath("../MetalDoor"), NodePath("../MetalDoor2")]
 
 [node name="Camera2D" type="Camera2D" parent="."]

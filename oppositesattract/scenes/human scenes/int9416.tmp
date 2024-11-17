@@ -14,7 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"players\"):
 		ghost_timer.show()
 		ghost_timer_timer.start()
-		
+	
 
 func _on_ghost_timer_timer_timeout() -> void:
 	$ghost_timer.value += 1
@@ -25,9 +25,10 @@ func _on_ghost_timer_timer_timeout() -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	ghost_timer_timer.stop()
-	$ghost_timer.value = 0
-	ghost_timer.hide()
+	if body.is_in_group(\"players\"):
+		ghost_timer_timer.stop()
+		$ghost_timer.value = 0
+		ghost_timer.hide()
 	
 	
 "
