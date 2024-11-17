@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjgjku1f43gbv"]
+[gd_scene load_steps=11 format=3 uid="uid://bjgjku1f43gbv"]
 
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="1_fb030"]
 [ext_resource type="Texture2D" uid="uid://e2oje5rt0t4c" path="res://art/human_portait.png" id="2_ef3em"]
 [ext_resource type="Texture2D" uid="uid://dqor1b7si0i2b" path="res://art/ghost_portrait.png" id="3_ejtdv"]
+[ext_resource type="AudioStream" uid="uid://bxava1rsj1aqo" path="res://Music/Retro_Multiple_v2_wav.wav" id="4_iu0ho"]
+[ext_resource type="AudioStream" uid="uid://dx7e6wyhgs5fa" path="res://Music/Retro_Multiple_v1_wav.wav" id="5_qfko3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1sg3"]
 bg_color = Color(0.07, 0.07, 0.07, 1)
@@ -94,6 +96,41 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("2_ef3em"), ExtResource("2_ef3em"), ExtResource("3_ejtdv")]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_iu0ho")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_iu0ho")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_qfko3")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_qfko3")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_qfko3")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_qfko3")
+}],
+"times": PackedFloat32Array(2.23333, 2.9, 5.23333, 5.7, 6.16667, 6.63333)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6d88s"]
 _data = {
@@ -101,7 +138,7 @@ _data = {
 "reveal_text": SubResource("Animation_dw71o")
 }
 
-[node name="Textbox" type="Control"]
+[node name="Textbox2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,3 +212,5 @@ autoplay = "reveal_text"
 position = Vector2(168, 46)
 scale = Vector2(20, 20)
 texture = ExtResource("2_ef3em")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
