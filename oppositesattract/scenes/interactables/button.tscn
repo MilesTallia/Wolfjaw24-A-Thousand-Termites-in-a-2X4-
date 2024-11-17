@@ -105,3 +105,5 @@ wait_time = 0.1
 [connection signal="body_exited" from="interact_test" to="interact_test" method="_on_body_exited"]
 [connection signal="timeout" from="interact_test/ghost_timer_timer" to="interact_test" method="_on_ghost_timer_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="button_prompt"]

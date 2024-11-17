@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce2yvfsbgansj"]
+
+[ext_resource type="Script" path="res://scripts/lever.gd" id="1_oc5ju"]
+[ext_resource type="PackedScene" uid="uid://na4d55dmxxi" path="res://scenes/human scenes/human_interact.tscn" id="2_tk3ah"]
+[ext_resource type="Texture2D" uid="uid://cudeujhe1wpbj" path="res://art/Floor_Lever.png" id="3_b03pn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e5xd"]
+atlas = ExtResource("3_b03pn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd47g"]
+atlas = ExtResource("3_b03pn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjc0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e5xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd47g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="lever" type="Node2D"]
+script = ExtResource("1_oc5ju")
+
+[node name="button_prompt" parent="." instance=ExtResource("2_tk3ah")]
+position = Vector2(0, -3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mjc0l")
+
+[connection signal="body_entered" from="button_prompt" to="." method="_on_button_prompt_body_entered"]
+[connection signal="body_exited" from="button_prompt" to="." method="_on_button_prompt_body_exited"]
+
+[editable path="button_prompt"]
