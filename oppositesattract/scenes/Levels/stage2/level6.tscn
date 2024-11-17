@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://3cpj0kl6iblw"]
+[gd_scene load_steps=12 format=4 uid="uid://3cpj0kl6iblw"]
 
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="1_4fle6"]
 [ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="2_eoskd"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_rhckm"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_rs8er"]
 [ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="7_u7hrx"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/lever.tscn" id="8_isjn3"]
+[ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="8_isjn3"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="9_aujnb"]
+[ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="10_85js2"]
+[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="11_7e1b8"]
 
 [node name="Level6" type="Node2D"]
 
@@ -57,8 +59,26 @@ position = Vector2(-56, 55)
 [node name="Box7" parent="." instance=ExtResource("7_u7hrx")]
 position = Vector2(-89, -55)
 
-[node name="lever" parent="." instance=ExtResource("8_isjn3")]
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_isjn3")]
 position = Vector2(-104, -62)
+door_array = [NodePath("../MetalDoor2")]
 
-[node name="circuit_breaker" parent="." instance=ExtResource("9_aujnb")]
+[node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_aujnb")]
 position = Vector2(97, -62)
+door_array = [NodePath("../WoodenDoor")]
+
+[node name="WoodenDoor" parent="." instance=ExtResource("10_85js2")]
+position = Vector2(-40, -40)
+rotation = 3.14159
+
+[node name="MetalDoor" parent="." instance=ExtResource("11_7e1b8")]
+position = Vector2(24, -24)
+rotation = 1.5708
+
+[node name="MetalDoor2" parent="." instance=ExtResource("11_7e1b8")]
+position = Vector2(88, 40)
+rotation = 1.5708
+
+[node name="lever2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_isjn3")]
+position = Vector2(-128, -8)
+door_array = [NodePath("../MetalDoor")]

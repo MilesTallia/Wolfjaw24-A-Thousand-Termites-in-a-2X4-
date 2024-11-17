@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cjtj8qjx3xnps"]
+[gd_scene load_steps=10 format=4 uid="uid://cjtj8qjx3xnps"]
 
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="1_7ttit"]
 [ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="2_3x8n0"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_37u0s"]
 [ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="6_ipj5a"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="7_mvs8h"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/lever.tscn" id="8_erje3"]
+[ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="8_erje3"]
+[ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="9_6bujs"]
 
 [node name="Level7" type="Node2D"]
 
@@ -115,5 +116,13 @@ position = Vector2(-44, 42)
 [node name="Box27" parent="." instance=ExtResource("6_ipj5a")]
 position = Vector2(-27, 56)
 
-[node name="lever" parent="." instance=ExtResource("8_erje3")]
+[node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_erje3")]
 position = Vector2(89, -63)
+door_array = [NodePath("../MetalDoor"), NodePath("../MetalDoor2")]
+
+[node name="MetalDoor" parent="." instance=ExtResource("9_6bujs")]
+position = Vector2(-104, -24)
+
+[node name="MetalDoor2" parent="." instance=ExtResource("9_6bujs")]
+position = Vector2(-88, -40)
+rotation = 1.5708
