@@ -17,7 +17,7 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="lever" parent="." node_paths=PackedStringArray("metal_door") instance=ExtResource("2_1n7nm")]
+[node name="lever" parent="." instance=ExtResource("2_1n7nm")]
 position = Vector2(-61, 30)
 
 [node name="MetalDoor" parent="." instance=ExtResource("4_whgph")]
