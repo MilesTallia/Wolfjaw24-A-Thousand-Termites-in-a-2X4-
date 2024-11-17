@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwhlo5iq11xgo"]
+[gd_scene load_steps=19 format=3 uid="uid://bcbtr6by6seuo"]
 
 [ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_3x3gb"]
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/esc_to_title_screen.gd" id="1_v254m"]
 [ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_oyeww"]
 [ext_resource type="Script" path="res://scripts/simple_flip.gd" id="3_b6cub"]
 [ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_mepge"]
@@ -117,6 +118,8 @@ animations = [{
 }]
 
 [node name="GhostRevivesEnding" type="Node2D"]
+script = ExtResource("1_v254m")
+next_room_path = "res://scenes/Title_Screen/title_screen.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
