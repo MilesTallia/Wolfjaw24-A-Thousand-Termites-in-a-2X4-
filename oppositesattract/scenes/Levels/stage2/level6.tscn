@@ -48,7 +48,7 @@ visible = false
 
 [node name="Stairs" parent="." instance=ExtResource("6_rs8er")]
 position = Vector2(118, 52)
-next_room_path = "/Users/kyleowen/Wolfjam/Wolfjaw24-A-Thousand-Termites-in-a-2X4-/oppositesattract/scenes/Levels/stage2/level7.tscn"
+next_room_path = "res://scenes/Levels/stage2/level7.tscn"
 
 [node name="Box" parent="." instance=ExtResource("7_u7hrx")]
 position = Vector2(-104, 55)

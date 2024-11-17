@@ -63,7 +63,7 @@ position = Vector2(56, -10)
 
 [node name="Stairs" parent="." instance=ExtResource("7_l2jdx")]
 position = Vector2(120, -23)
-next_room_path = "/Users/kyleowen/Wolfjam/Wolfjaw24-A-Thousand-Termites-in-a-2X4-/oppositesattract/scenes/Levels/level_last.tscn"
+next_room_path = "res://scenes/Levels/final_room.tscn"
 
 [node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_hp8tj")]
 position = Vector2(34, -63)
