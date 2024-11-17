@@ -5,6 +5,9 @@ extends CharacterBody2D
 func get_input():
 	var input_direction = Input.get_vector("human left", "human right", "human up", "human down")
 	velocity = input_direction * speed
+	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func _physics_process(_delta):
 	get_input()
