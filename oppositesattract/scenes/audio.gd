@@ -12,3 +12,9 @@ func playMenu():
 	
 func stopMenu():
 	$menu.stop()
+	
+func playBG():
+	$gameBG.play()
+
+func stopBG():
+	$gameBG.stop()

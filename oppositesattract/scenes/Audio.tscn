@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c30ad8mphnhv4"]
+[gd_scene load_steps=5 format=3 uid="uid://c30ad8mphnhv4"]
 
 [ext_resource type="Script" path="res://scenes/audio.gd" id="1_lyrb0"]
 [ext_resource type="AudioStream" uid="uid://d05nfij4i3ho7" path="res://sound/Trick or Treat  (Halloween  Autumn Lofi No Copyright Playlist).mp3" id="2_j02w1"]
 [ext_resource type="AudioStream" uid="uid://06xxiqbfa27g" path="res://sound/halloween-waltz-252907.mp3" id="3_a7w7k"]
+[ext_resource type="AudioStream" uid="uid://b7qrpwh6l5vrk" path="res://sound/Haunted Mansion (Royalty Free Music).mp3" id="4_si1a6"]
 
 [node name="AudioController" type="Node"]
 script = ExtResource("1_lyrb0")
@@ -14,3 +15,7 @@ volume_db = -3.876
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_a7w7k")
 volume_db = -2.907
+
+[node name="gameBG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_si1a6")
+volume_db = -9.69

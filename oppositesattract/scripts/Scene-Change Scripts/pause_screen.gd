@@ -7,6 +7,7 @@ func _ready():
 	pause_menu.hide()
 	Engine.time_scale = 1;
 	Audio.stopMusic()
+	Audio.playBG()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

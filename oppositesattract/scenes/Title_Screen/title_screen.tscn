@@ -350,6 +350,7 @@ text = "Opposites
         Attract"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 257.0
 offset_top = 129.0
 offset_right = 914.0
@@ -361,6 +362,7 @@ text = "Opposites
         Attract"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 122.0
 offset_right = 921.0
@@ -372,6 +374,7 @@ text = "Opposites
         Attract"
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 271.0
 offset_top = 115.0
 offset_right = 928.0
