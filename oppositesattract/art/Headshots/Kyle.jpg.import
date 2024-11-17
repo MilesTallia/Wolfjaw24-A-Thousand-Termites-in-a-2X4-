@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brk3126jbsmdq"
-path="res://.godot/imported/Kyle.png-eccaed84df41a1c6fa61844e2455dd96.ctex"
+uid="uid://dqvkqrnubtiwv"
+path="res://.godot/imported/Kyle.jpg-fb5337d6618d8717424d914709c57e41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Headshots/Kyle.png"
-dest_files=["res://.godot/imported/Kyle.png-eccaed84df41a1c6fa61844e2455dd96.ctex"]
+source_file="res://art/Headshots/Kyle.jpg"
+dest_files=["res://.godot/imported/Kyle.jpg-fb5337d6618d8717424d914709c57e41.ctex"]
 
 [params]
 

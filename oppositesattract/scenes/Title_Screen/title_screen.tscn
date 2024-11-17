@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://j4lrdv3ai61l"]
+[gd_scene load_steps=27 format=3 uid="uid://j4lrdv3ai61l"]
 
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="1_7xxan"]
 [ext_resource type="Texture2D" uid="uid://b5s4vchm00bk1" path="res://art/title_screen_backdrop.png" id="2_48bkw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://e2oje5rt0t4c" path="res://art/human_portait.png" id="5_82thv"]
 [ext_resource type="Texture2D" uid="uid://drc2iwcs8asqd" path="res://art/Goat_Head.png" id="6_vqnew"]
 [ext_resource type="Texture2D" uid="uid://c0kw7r0losy41" path="res://art/Coffin.png" id="7_4qyva"]
+[ext_resource type="FontFile" uid="uid://do6dm8s47m664" path="res://art/origa___.ttf" id="8_37bf8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfooj"]
 
@@ -262,13 +263,13 @@ text = "Exit"
 
 [node name="Instructions" type="Button" parent="."]
 layout_mode = 0
-offset_left = 567.0
+offset_left = 615.0
 offset_top = 529.0
 offset_right = 845.0
 offset_bottom = 595.0
 theme_override_fonts/font = ExtResource("1_7xxan")
 theme_override_font_sizes/font_size = 30
-text = "Instructions"
+text = "Controls"
 
 [node name="Tutorial" type="Button" parent="."]
 layout_mode = 0
@@ -335,6 +336,50 @@ libraries = {
 "": SubResource("AnimationLibrary_77gg6")
 }
 autoplay = "teleport"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 136.0
+offset_right = 907.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("8_37bf8")
+theme_override_font_sizes/font_size = 72
+text = "Opposites 
+        Attract"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 257.0
+offset_top = 129.0
+offset_right = 914.0
+offset_bottom = 298.0
+theme_override_colors/font_color = Color(0.17, 0.17, 0.17, 1)
+theme_override_fonts/font = ExtResource("8_37bf8")
+theme_override_font_sizes/font_size = 72
+text = "Opposites 
+        Attract"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 122.0
+offset_right = 921.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(0.34, 0.34, 0.34, 1)
+theme_override_fonts/font = ExtResource("8_37bf8")
+theme_override_font_sizes/font_size = 72
+text = "Opposites 
+        Attract"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 271.0
+offset_top = 115.0
+offset_right = 928.0
+offset_bottom = 284.0
+theme_override_fonts/font = ExtResource("8_37bf8")
+theme_override_font_sizes/font_size = 72
+text = "Opposites 
+        Attract"
 
 [connection signal="pressed" from="Start New Game" to="." method="_on_start_new_game_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
