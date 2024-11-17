@@ -4,15 +4,15 @@
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="2_d1mb5"]
 [ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="2_ixeft"]
 [ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="3_1nrqq"]
-[ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="3_lwqbk"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="4_xjbb1"]
-[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="5_xvymj"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="5_xvymj"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_dnmye"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_r6pvt"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="7_b3m8c"]
-[ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="10_gcbup"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="10_gcbup"]
 [ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="11_n6qjk"]
 [ext_resource type="PackedScene" uid="uid://dmqbrboul1ss2" path="res://scenes/decorations.tscn" id="12_o12qx"]
+[ext_resource type="PackedScene" uid="uid://bbeaft24s8n7q" path="res://scenes/sign.tscn" id="14_86prc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2oq5"]
 texture = ExtResource("2_ixeft")
@@ -34,30 +34,6 @@ tile_set = ExtResource("2_d1mb5")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_set = ExtResource("3_1nrqq")
-
-[node name="levers" type="Label" parent="."]
-offset_left = 14.0
-offset_top = -11.0
-offset_right = 74.0
-offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("3_lwqbk")
-theme_override_font_sizes/font_size = 9
-text = "Humans 
-use levers 
-to open 
-doors"
-
-[node name="breaker boxes" type="Label" parent="."]
-offset_left = -63.0
-offset_top = -11.0
-offset_right = -5.0
-offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("3_lwqbk")
-theme_override_font_sizes/font_size = 9
-text = "Ghosts use 
-breaker 
-boxes to 
-open doors"
 
 [node name="Stairs" parent="." instance=ExtResource("6_dnmye")]
 position = Vector2(0, -56)
@@ -92,13 +68,41 @@ door_array = [NodePath("../MetalDoor2")]
 position = Vector2(-14, 9.53674e-07)
 rotation = -1.5708
 
+[node name="Decorations" parent="." instance=ExtResource("12_o12qx")]
+
+[node name="sign2" parent="." instance=ExtResource("14_86prc")]
+position = Vector2(117, 53)
+
+[node name="sign_label" parent="sign2" index="2"]
+offset_left = -108.0
+offset_top = -65.0
+offset_right = -8.0
+offset_bottom = -12.0
+text = "Ghosts use 
+breaker 
+boxes to 
+open doors"
+
+[node name="sign" parent="." instance=ExtResource("14_86prc")]
+position = Vector2(-117, 53)
+
+[node name="sign_label" parent="sign" index="2"]
+offset_left = 55.0
+offset_top = -65.0
+offset_right = 155.0
+offset_bottom = -12.0
+text = "Humans 
+use levers 
+to open 
+doors"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("6_r6pvt")]
 visible = false
 
-[node name="Decorations" parent="." instance=ExtResource("12_o12qx")]
-
 [editable path="lever"]
 [editable path="circuit_breaker"]
+[editable path="sign2"]
+[editable path="sign"]
