@@ -73,12 +73,6 @@ visible = false
 [node name="CollisionShape2D" parent="MetalDoor3/AnimatableBody2D" index="1"]
 disabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("7_pq587")]
-visible = false
-
 [node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("6_4757p")]
 position = Vector2(-17, -8)
 door_array = [NodePath("../MetalDoor3"), NodePath("../MetalDoor")]
@@ -98,6 +92,12 @@ offset_top = -5.0
 offset_right = 13.0
 offset_bottom = 35.0
 rotation = -1.5708
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("7_pq587")]
+visible = false
 
 [editable path="MetalDoor3"]
 [editable path="Stairs"]

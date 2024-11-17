@@ -44,12 +44,6 @@ position = Vector2(104, 24)
 [node name="WoodenDoor3" parent="." instance=ExtResource("7_b0wji")]
 position = Vector2(8, -24)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("6_iujrk")]
-visible = false
-
 [node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("9_p62m7")]
 position = Vector2(-120, 0)
 door_array = [NodePath("../WoodenDoor")]
@@ -81,5 +75,11 @@ offset_top = 40.0
 offset_right = 45.0
 offset_bottom = 80.0
 rotation = 3.14159
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("6_iujrk")]
+visible = false
 
 [editable path="Stairs"]

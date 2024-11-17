@@ -28,12 +28,6 @@ position = Vector2(-104, 71)
 [node name="Human" parent="." instance=ExtResource("4_api0f")]
 position = Vector2(105, 72)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_koaac")]
-visible = false
-
 [node name="MetalDoor" parent="." instance=ExtResource("6_ow3xq")]
 position = Vector2(-104, 40)
 
@@ -76,3 +70,9 @@ door_array = [NodePath("../MetalDoor5")]
 [node name="Stairs" parent="." instance=ExtResource("10_ofa2u")]
 position = Vector2(0, -56)
 next_room_path = "res://scenes/Levels/stage2/level5.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_koaac")]
+visible = false
