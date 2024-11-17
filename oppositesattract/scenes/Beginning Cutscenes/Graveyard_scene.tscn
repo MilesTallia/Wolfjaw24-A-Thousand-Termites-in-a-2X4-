@@ -135,7 +135,6 @@ script = ExtResource("1_5q7g3")
 next_room_path = "res://scenes/Beginning Cutscenes/temple_scene.tscn"
 
 [node name="Graveyard" type="Sprite2D" parent="."]
-position = Vector2(2, 0)
 texture = ExtResource("1_n6let")
 
 [node name="NewGrave" type="Sprite2D" parent="."]
