@@ -183,6 +183,7 @@ animations = [{
 
 [node name="TempleScene" type="Node2D"]
 script = ExtResource("1_jeeso")
+next_room_path = "res://scenes/Levels/level1.tscn"
 
 [node name="Crypt" type="Sprite2D" parent="."]
 texture = ExtResource("4_qxt2t")
@@ -255,3 +256,4 @@ layout_mode = 1
 zoom = Vector2(4, 4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 3.019

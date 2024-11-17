@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgte3jpnw1i5i"]
+[gd_scene load_steps=24 format=3 uid="uid://dgte3jpnw1i5i"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/enter_to_continue.gd" id="1_5q7g3"]
 [ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_n6let"]
 [ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_uxj7h"]
 [ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_7scga"]
+[ext_resource type="Script" path="res://scenes/Beginning Cutscenes/graveyard.gd" id="3_acfyk"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="4_lvv43"]
 [ext_resource type="AudioStream" uid="uid://dcxr3hpavv0n1" path="res://Music/light-rain-109591.mp3" id="5_113sv"]
 [ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="5_gwke5"]
@@ -148,9 +149,11 @@ _data = {
 
 [node name="GraveyardScene" type="Node2D"]
 script = ExtResource("1_5q7g3")
+next_room_path = "res://scenes/Beginning Cutscenes/temple_scene.tscn"
 
 [node name="Graveyard" type="Sprite2D" parent="."]
 texture = ExtResource("1_n6let")
+script = ExtResource("3_acfyk")
 
 [node name="NewGrave" type="Sprite2D" parent="."]
 position = Vector2(4, 9)
@@ -204,3 +207,4 @@ offset_bottom = 81.0
 scale = Vector2(0.25, 0.25)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 2.348
