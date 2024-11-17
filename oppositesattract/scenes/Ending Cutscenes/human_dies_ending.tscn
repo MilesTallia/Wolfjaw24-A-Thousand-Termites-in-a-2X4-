@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3jatj3x8gg45"]
+[gd_scene load_steps=18 format=3 uid="uid://br8x3s2ev8t6t"]
 
 [ext_resource type="Texture2D" uid="uid://d4ioxvt1c84de" path="res://art/two_ghost_ending.png" id="1_a7tew"]
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/esc_to_title_screen.gd" id="1_g6ud4"]

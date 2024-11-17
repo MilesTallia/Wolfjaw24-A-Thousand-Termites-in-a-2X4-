@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="8_5s5du"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="9_k227b"]
 [ext_resource type="PackedScene" uid="uid://bvvlm0rbeuuod" path="res://scenes/interactables/button.tscn" id="10_u7crl"]
-[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="12_xl6j2"]
-[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="13_chmrd"]
+[ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="12_xl6j2"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="13_chmrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sjx4r"]
 texture = ExtResource("2_khbjl")
@@ -44,12 +44,6 @@ position = Vector2(-136, -55)
 [node name="Stairs" parent="." instance=ExtResource("7_u5k1p")]
 position = Vector2(114, -51)
 next_room_path = "res://scenes/Levels/stage2/level5.tscn"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("8_5s5du")]
-visible = false
 
 [node name="MetalDoor" parent="." instance=ExtResource("9_k227b")]
 position = Vector2(55, -56)
@@ -113,3 +107,9 @@ rotation = 1.5708
 position = Vector2(113, 56)
 door_array = [NodePath("../MetalDoor7")]
 num_time = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("8_5s5du")]
+visible = false

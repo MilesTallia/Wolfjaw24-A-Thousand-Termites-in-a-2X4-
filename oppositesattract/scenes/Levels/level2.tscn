@@ -47,7 +47,7 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_hb16u")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3phh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f31ir"]
 texture = ExtResource("11_qrd4v")
 0:0/0 = 0
 1:0/0 = 0
@@ -59,7 +59,7 @@ texture = ExtResource("11_qrd4v")
 1:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_02w2w"]
-sources/0 = SubResource("TileSetAtlasSource_x3phh")
+sources/0 = SubResource("TileSetAtlasSource_f31ir")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_1bkjo")

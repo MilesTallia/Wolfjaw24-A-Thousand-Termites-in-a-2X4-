@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcbtr6by6seuo"]
+[gd_scene load_steps=19 format=3 uid="uid://cwhlo5iq11xgo"]
 
 [ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_3x3gb"]
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/esc_to_title_screen.gd" id="1_v254m"]
