@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu1yvl1a2h72v"]
+[gd_scene load_steps=7 format=3 uid="uid://bu1yvl1a2h72v"]
 
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="1_7rkr6"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="2_8t65d"]
@@ -28,5 +28,10 @@ zoom = Vector2(4, 4)
 [node name="lever" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("5_ypclv")]
 position = Vector2(123, -2)
 door_array = [NodePath("../MetalDoor"), NodePath("../MetalDoor2")]
+
+[node name="Button" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("6_xdwf2")]
+position = Vector2(27, 46)
+door_array = [NodePath("../MetalDoor"), NodePath("../MetalDoor2")]
+num_time = 10
 
 [editable path="circuit_breaker"]
