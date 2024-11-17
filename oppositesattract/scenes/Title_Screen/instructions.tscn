@@ -78,7 +78,9 @@ theme_override_font_sizes/font_size = 30
 text = "^   -   up
 <    -   left
      -   down
->    -   right"
+>    -   right
+R    -   Reset 
+          Level"
 
 [node name="down arrow" type="Label" parent="."]
 layout_mode = 0
