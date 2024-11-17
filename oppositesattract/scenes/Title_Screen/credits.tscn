@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://udyhy3tgl5ei" path="res://art/Headshots/Gabriel.jpg" id="4_tvnex"]
 [ext_resource type="Texture2D" uid="uid://ctb5olyw4nsms" path="res://art/Headshots/Andrew.jpeg" id="5_b8f00"]
 [ext_resource type="Texture2D" uid="uid://bi4ynf00i72ey" path="res://art/Headshots/Luke.jpg" id="6_6henh"]
-[ext_resource type="Texture2D" uid="uid://brk3126jbsmdq" path="res://art/Headshots/Kyle.png" id="7_723cl"]
+[ext_resource type="Texture2D" uid="uid://dqvkqrnubtiwv" path="res://art/Headshots/Kyle.jpg" id="8_ktttd"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -111,9 +111,9 @@ theme_override_font_sizes/font_size = 30
 text = "Kyle"
 
 [node name="Sprite2D" type="Sprite2D" parent="Kyle"]
-position = Vector2(186, -107)
-scale = Vector2(0.401674, 0.401674)
-texture = ExtResource("7_723cl")
+position = Vector2(187, -108)
+scale = Vector2(0.127744, 0.127744)
+texture = ExtResource("8_ktttd")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Miles" to="." method="_on_miles_pressed"]
