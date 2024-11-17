@@ -1,17 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgte3jpnw1i5i"]
+[gd_scene load_steps=22 format=3 uid="uid://dgte3jpnw1i5i"]
 
-[ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_kjb4q"]
-[ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_s27vl"]
-[ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_6i2cn"]
-[ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="4_h42tg"]
-[ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="5_fbwcm"]
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/enter_to_continue.gd" id="1_5q7g3"]
+[ext_resource type="Texture2D" uid="uid://g48ubkdo4v6x" path="res://art/Graveyard.png" id="1_n6let"]
+[ext_resource type="Texture2D" uid="uid://caki3ujouhbfk" path="res://art/New_Grave.png" id="2_uxj7h"]
+[ext_resource type="Texture2D" uid="uid://dl5do7f8cinkc" path="res://art/Human-Sheet.png" id="3_7scga"]
+[ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="4_lvv43"]
+[ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="5_gwke5"]
+[ext_resource type="PackedScene" uid="uid://cer6fqnxl4jov" path="res://scenes/Beginning Cutscenes/enter_to_continue.tscn" id="6_c2k42"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah8a3"]
-atlas = ExtResource("3_6i2cn")
+atlas = ExtResource("3_7scga")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjkkc"]
-atlas = ExtResource("3_6i2cn")
+atlas = ExtResource("3_7scga")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_58myk"]
@@ -70,11 +72,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_6bp67"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdf10"]
-atlas = ExtResource("5_fbwcm")
+atlas = ExtResource("4_lvv43")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ado"]
-atlas = ExtResource("5_fbwcm")
+atlas = ExtResource("4_lvv43")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4a6sx"]
@@ -129,14 +131,16 @@ _data = {
 }
 
 [node name="GraveyardScene" type="Node2D"]
+script = ExtResource("1_5q7g3")
+next_room_path = "res://scenes/Beginning Cutscenes/temple_scene.tscn"
 
 [node name="Graveyard" type="Sprite2D" parent="."]
 position = Vector2(2, 0)
-texture = ExtResource("1_kjb4q")
+texture = ExtResource("1_n6let")
 
 [node name="NewGrave" type="Sprite2D" parent="."]
 position = Vector2(4, 9)
-texture = ExtResource("2_s27vl")
+texture = ExtResource("2_uxj7h")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-88, 93)
@@ -157,9 +161,6 @@ libraries = {
 }
 autoplay = "player goes to grave"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(4, 10)
 
@@ -178,4 +179,12 @@ autoplay = "follow human"
 
 [node name="GhostBlock" type="Sprite2D" parent="."]
 position = Vector2(4, 27)
-texture = ExtResource("4_h42tg")
+texture = ExtResource("5_gwke5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Textbox" parent="Camera2D" instance=ExtResource("6_c2k42")]
+offset_top = 81.0
+offset_bottom = 81.0
+scale = Vector2(0.25, 0.25)
