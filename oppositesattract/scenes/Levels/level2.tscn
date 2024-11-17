@@ -76,12 +76,6 @@ tile_set = SubResource("TileSet_0ehle")
 tile_map_data = PackedByteArray("AAADAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_kyp5v")
 
-[node name="ghost" parent="." instance=ExtResource("3_34o5i")]
-position = Vector2(-136, 8)
-
-[node name="Human" parent="." instance=ExtResource("4_w0pio")]
-position = Vector2(-136, 40)
-
 [node name="MetalDoor" parent="." instance=ExtResource("5_4r8a3")]
 position = Vector2(-56, -56)
 rotation = 1.5708
@@ -120,15 +114,21 @@ offset_right = 13.0
 offset_bottom = 35.0
 rotation = -1.5708
 
+[node name="TileMapLayer4" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4/wMAAAACAAEAAGD8/wIAAAAAAAEAAAD5//z/AAAAAAIAAAAEAPz/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_02w2w")
+
+[node name="ghost" parent="." instance=ExtResource("3_34o5i")]
+position = Vector2(-136, 8)
+
+[node name="Human" parent="." instance=ExtResource("4_w0pio")]
+position = Vector2(-136, 40)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("7_pq587")]
 visible = false
-
-[node name="TileMapLayer4" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD4/wMAAAACAAEAAGD8/wIAAAAAAAEAAAD5//z/AAAAAAIAAAAEAPz/AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_02w2w")
 
 [editable path="MetalDoor3"]
 [editable path="Stairs"]
