@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="2_cyk0o"]
 [ext_resource type="TileSet" uid="uid://cphq3rdlsk61m" path="res://scenes/Levels/wood_set.tres" id="3_mtlo4"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_obcm5"]
-[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_jjrip"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="4_jjrip"]
 [ext_resource type="FontFile" uid="uid://cp5n4a86iqssk" path="res://art/PixeloidSans.ttf" id="5_ss8ad"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_hsk8n"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_v3t10"]
