@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="3_is761"]
 [ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_i5ls3"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_waxef"]
-[ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="6_03yxm"]
+[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="6_03yxm"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="7_l2jdx"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="8_hp8tj"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="8_hp8tj"]
 [ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="9_ig4jk"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="10_re2a8"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="11_oucfo"]
@@ -63,7 +63,7 @@ position = Vector2(56, -10)
 
 [node name="Stairs" parent="." instance=ExtResource("7_l2jdx")]
 position = Vector2(120, -23)
-next_room_path = "/Users/kyleowen/Wolfjam/Wolfjaw24-A-Thousand-Termites-in-a-2X4-/oppositesattract/scenes/Levels/level_last.tscn"
+next_room_path = "res://scenes/Levels/stage3/level9.tscn"
 
 [node name="circuit_breaker" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_hp8tj")]
 position = Vector2(34, -63)
