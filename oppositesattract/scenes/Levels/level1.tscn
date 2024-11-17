@@ -7,20 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="3_lcmh4"]
 [ext_resource type="Script" path="res://scenes/Levels/tile_map_layer_3.gd" id="3_suu5s"]
 [ext_resource type="PackedScene" uid="uid://c816vqoip243s" path="res://scenes/ghost scenes/ghost.tscn" id="4_56k4f"]
-[ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
+[ext_resource type="PackedScene" uid="uid://dxah5iwyjrka4" path="res://scenes/human scenes/human.tscn" id="5_m5sbg"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="6_kw3pu"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_1ihs7"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="8_w003g"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="10_kducl"]
-[ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="11_65ku7"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="10_kducl"]
+[ext_resource type="PackedScene" uid="uid://bhpkcertyp0d3" path="res://scenes/interactables/lever.tscn" id="11_65ku7"]
 [ext_resource type="Texture2D" uid="uid://dbsaoexwlb4uw" path="res://art/decor.png" id="13_gu432"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r16gt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly6kn"]
 texture = ExtResource("2_3uy0w")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_q48cc"]
-sources/0 = SubResource("TileSetAtlasSource_r16gt")
+sources/0 = SubResource("TileSetAtlasSource_ly6kn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb16u"]
 texture = ExtResource("2_gfan8")
@@ -36,7 +36,7 @@ physics_layer_0/collision_layer = 5
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_hb16u")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8y2l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4n42"]
 texture = ExtResource("13_gu432")
 0:0/0 = 0
 1:0/0 = 0
@@ -48,7 +48,7 @@ texture = ExtResource("13_gu432")
 1:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4bu35"]
-sources/0 = SubResource("TileSetAtlasSource_t8y2l")
+sources/0 = SubResource("TileSetAtlasSource_e4n42")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rap0j")

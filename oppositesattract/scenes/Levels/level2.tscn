@@ -47,7 +47,7 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_hb16u")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f31ir"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3phh"]
 texture = ExtResource("11_qrd4v")
 0:0/0 = 0
 1:0/0 = 0
@@ -59,7 +59,7 @@ texture = ExtResource("11_qrd4v")
 1:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_02w2w"]
-sources/0 = SubResource("TileSetAtlasSource_f31ir")
+sources/0 = SubResource("TileSetAtlasSource_x3phh")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_1bkjo")
@@ -105,7 +105,7 @@ door_array = [NodePath("../MetalDoor2")]
 [node name="Stairs" parent="." instance=ExtResource("9_qrp4d")]
 position = Vector2(120, 0)
 rotation = 1.5708
-next_room_path = "res://scenes/Levels/level3.tscn"
+next_room_path = "res://scenes/res://scenes/Levels/level3.tscnLevels/level3.tscn"
 
 [node name="exit_anim" parent="Stairs" index="0"]
 offset_left = -27.0

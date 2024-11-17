@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c67h8lmvwanbm"]
+[gd_scene load_steps=18 format=4 uid="uid://c67h8lmvwanbm"]
 
 [ext_resource type="Script" path="res://scripts/Scene-Change Scripts/pause_screen.gd" id="1_arvpq"]
 [ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="2_2e7rn"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="5_tti7g"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="6_iujrk"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="7_b0wji"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="9_p62m7"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="9_p62m7"]
+[ext_resource type="Texture2D" uid="uid://dbsaoexwlb4uw" path="res://art/decor.png" id="10_36l4n"]
 [ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="10_m6ei4"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="11_8omvs"]
 
@@ -19,6 +20,20 @@ texture = ExtResource("2_2e7rn")
 
 [sub_resource type="TileSet" id="TileSet_c4gq5"]
 sources/0 = SubResource("TileSetAtlasSource_ve0qw")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vrap"]
+texture = ExtResource("10_36l4n")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oeo6g"]
+sources/0 = SubResource("TileSetAtlasSource_7vrap")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_arvpq")
@@ -34,12 +49,6 @@ tile_set = ExtResource("2_r2twf")
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD6//7/AAAAAAEAAAD4//7/AAAAAAEAAAAHAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAACAAIAAAAAAAIAAAD9/wIAAAAAAAIAAAD9//7/AAAAAAIAAAACAP7/AAAAAAIAAAABAAIAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wIAAAAAAAEAAAD+/wIAAAAAAAEAAAABAP7/AAAAAAEAAAD///7/AAAAAAEAAAD+//7/AAAAAAEAAAACAP//AAAAAAEAAFACAAAAAAAAAAEAAFACAAEAAAAAAAEAAFD9////AAAAAAEAAFD9/wAAAAAAAAEAAFD9/wEAAAAAAAEAAFA=")
 tile_set = ExtResource("3_tjmfd")
-
-[node name="ghost" parent="." instance=ExtResource("3_y012d")]
-position = Vector2(-14, -72)
-
-[node name="Human" parent="." instance=ExtResource("4_mmdb6")]
-position = Vector2(16, -72)
 
 [node name="MetalDoor" parent="." instance=ExtResource("5_tti7g")]
 position = Vector2(104, -24)
@@ -87,6 +96,16 @@ offset_top = 40.0
 offset_right = 45.0
 offset_bottom = 80.0
 rotation = 3.14159
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4/wMAAAACAAEAAGD4//z/AAACAAEAAAAHAPz/AAACAAEAAFABAAAAAAABAAEAAAAEAPz/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_oeo6g")
+
+[node name="ghost" parent="." instance=ExtResource("3_y012d")]
+position = Vector2(-14, -72)
+
+[node name="Human" parent="." instance=ExtResource("4_mmdb6")]
+position = Vector2(16, -72)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://3cpj0kl6iblw"]
+[gd_scene load_steps=18 format=4 uid="uid://3cpj0kl6iblw"]
 
 [ext_resource type="TileSet" uid="uid://by1q6on0le1q5" path="res://scenes/Levels/stone_set.tres" id="1_4fle6"]
 [ext_resource type="Texture2D" uid="uid://byj0cwien62rr" path="res://art/floor-tile.png" id="1_j2kqr"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bhfhx1jka88r6" path="res://scenes/human scenes/human.tscn" id="4_2jqcm"]
 [ext_resource type="PackedScene" uid="uid://bwuixjhqx6wwi" path="res://scenes/Title_Screen/pause_menu.tscn" id="5_rhckm"]
 [ext_resource type="PackedScene" uid="uid://d3lsrrw2xym7u" path="res://scenes/objects/stairs.tscn" id="6_rs8er"]
-[ext_resource type="PackedScene" uid="uid://ntxlx28w4u7i" path="res://scenes/objects/box.tscn" id="7_u7hrx"]
+[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="7_u7hrx"]
 [ext_resource type="PackedScene" uid="uid://chi50dic3x2rg" path="res://scenes/interactables/lever.tscn" id="8_isjn3"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/circuit_breaker.tscn" id="9_aujnb"]
+[ext_resource type="PackedScene" uid="uid://qrf51iqrevbt" path="res://scenes/interactables/circuit_breaker.tscn" id="9_aujnb"]
 [ext_resource type="PackedScene" uid="uid://dw00ygldifoq4" path="res://scenes/objects/Wooden_Door.tscn" id="10_85js2"]
 [ext_resource type="PackedScene" uid="uid://2xbcr255b16g" path="res://scenes/objects/Metal_Door.tscn" id="11_7e1b8"]
+[ext_resource type="Texture2D" uid="uid://dbsaoexwlb4uw" path="res://art/decor.png" id="13_3f2l1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3biki"]
 texture = ExtResource("1_j2kqr")
@@ -19,6 +20,20 @@ texture = ExtResource("1_j2kqr")
 
 [sub_resource type="TileSet" id="TileSet_h6oee"]
 sources/0 = SubResource("TileSetAtlasSource_3biki")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jc1n"]
+texture = ExtResource("13_3f2l1")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6yxdq"]
+sources/0 = SubResource("TileSetAtlasSource_5jc1n")
 
 [node name="Level6" type="Node2D"]
 
@@ -33,18 +48,6 @@ tile_set = ExtResource("1_4fle6")
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD4//3/AAAAAAEAAAD5//3/AAAAAAEAAAD6//3/AAAAAAEAAAD7//3/AAAAAAEAAAD8//3/AAAAAAEAAAD+//3/AAAAAAEAAAD///3/AAAAAAIAAAD///z/AAAAAAEAAGA=")
 tile_set = ExtResource("2_eoskd")
-
-[node name="ghost" parent="." instance=ExtResource("3_yba8c")]
-position = Vector2(35, 47)
-
-[node name="Human" parent="." instance=ExtResource("4_2jqcm")]
-position = Vector2(-81, 65)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_rhckm")]
-visible = false
 
 [node name="Stairs" parent="." instance=ExtResource("6_rs8er")]
 position = Vector2(118, 52)
@@ -94,3 +97,19 @@ rotation = 1.5708
 [node name="lever2" parent="." node_paths=PackedStringArray("door_array") instance=ExtResource("8_isjn3")]
 position = Vector2(-128, -8)
 door_array = [NodePath("../MetalDoor")]
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAHAPz/AAACAAEAAFD///7/AAACAAAAAAAAAAMAAAACAAAAADAEAAEAAAAAAAIAAAAEAP7/AAABAAEAAAD3//3/AAACAAEAAAA=")
+tile_set = SubResource("TileSet_6yxdq")
+
+[node name="Human" parent="." instance=ExtResource("4_2jqcm")]
+position = Vector2(-81, 65)
+
+[node name="ghost" parent="." instance=ExtResource("3_yba8c")]
+position = Vector2(35, 47)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("5_rhckm")]
+visible = false

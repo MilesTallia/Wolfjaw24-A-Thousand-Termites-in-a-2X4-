@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://br8x3s2ev8t6t"]
+[gd_scene load_steps=18 format=3 uid="uid://b3jatj3x8gg45"]
 
 [ext_resource type="Texture2D" uid="uid://d4ioxvt1c84de" path="res://art/two_ghost_ending.png" id="1_a7tew"]
+[ext_resource type="Script" path="res://scripts/Scene-Change Scripts/esc_to_title_screen.gd" id="1_g6ud4"]
 [ext_resource type="Texture2D" uid="uid://c6rvov0hqpatx" path="res://art/Ghost-Sheet.png" id="2_jpi6v"]
 [ext_resource type="Script" path="res://scripts/simple_flip.gd" id="2_spg35"]
 [ext_resource type="Texture2D" uid="uid://c1md8uc1us703" path="res://art/ghost_block.png" id="3_jc0in"]
@@ -92,6 +93,8 @@ _data = {
 }
 
 [node name="HumanDiesEnding" type="Node2D"]
+script = ExtResource("1_g6ud4")
+next_room_path = "res://scenes/Title_Screen/title_screen.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

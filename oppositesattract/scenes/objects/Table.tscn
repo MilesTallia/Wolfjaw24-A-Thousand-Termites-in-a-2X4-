@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://du2oonjopyj5l"]
+
+[ext_resource type="Texture2D" uid="uid://cvay523um0wgs" path="res://art/table.png" id="1_xhjkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un6xb"]
+size = Vector2(16, 16)
+
+[node name="Table" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 513
+collision_mask = 513
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_xhjkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_un6xb")

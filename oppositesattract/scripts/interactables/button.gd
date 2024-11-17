@@ -30,10 +30,12 @@ func toggle():
 	
 
 func _on_button_prompt_body_entered(body: Node2D) -> void:
-	in_range = true
+	if body.is_in_group("players"):
+		in_range = true
 
 func _on_button_prompt_body_exited(body: Node2D) -> void:
-	in_range = false
+	if body.is_in_group("players"):
+		in_range = false
 
 
 func _on_timer_timeout() -> void:
